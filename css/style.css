@@ -1,0 +1,452 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#header {
+  width: 100%;
+  height: 630px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+#header .inner {
+  width: 1180px;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header .inner h1 a {
+  font-size: 20px;
+  letter-spacing: 10px;
+  color: rgba(255, 255, 255, 0.9);
+}
+#header .inner #gnb {
+  display: flex;
+}
+#header .inner #gnb li a {
+  display: block;
+  padding: 10px 15px;
+  font: 15px "Karla";
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  margin-left: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+#header .inner #gnb li:hover a {
+  color: #333;
+  transition: 0.5s;
+}
+#header .inner #gnb li.on a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#visual {
+  width: 100%;
+  position: relative;
+}
+#visual .inner {
+  width: 1180px;
+  height: 630px;
+  margin: 0 auto;
+  position: relative;
+}
+#visual #sliderMain {
+  width: 100%;
+}
+#visual #sliderMain ul {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 100%;
+}
+#visual #sliderMain ul li {
+  width: 33.3333333333%;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+#visual #sliderMain ul li[data-index="0"] {
+  background: #ededf7;
+}
+#visual #sliderMain ul li[data-index="0"] div {
+  width: 1200px;
+  position: absolute;
+  top: 0;
+  left: 10%;
+}
+#visual #sliderMain ul li[data-index="0"] div img {
+  width: 95%;
+  height: 95%;
+  object-fit: cover;
+}
+#visual #sliderMain ul li[data-index="1"] {
+  background: #f6edf7;
+}
+#visual #sliderMain ul li[data-index="1"] div {
+  width: 1200px;
+  position: absolute;
+  top: -2%;
+  left: 10%;
+}
+#visual #sliderMain ul li[data-index="1"] div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#visual #sliderMain ul li[data-index="2"] {
+  background: #555;
+}
+#visual #sliderMain ul li[data-index="2"] div {
+  width: 1200px;
+  position: absolute;
+  top: 15%;
+  left: 14%;
+}
+#visual #sliderMain ul li[data-index="2"] div img {
+  width: 75%;
+  height: 75%;
+  object-fit: cover;
+}
+#visual #sliderMain .btnPrev,
+#visual #sliderMain .btnNext {
+  position: absolute;
+  top: 300px;
+  z-index: 10;
+  padding: 20px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+#visual #sliderMain .btnPrev span,
+#visual #sliderMain .btnNext span {
+  display: block;
+  font: normal 12px/1 "Karla";
+}
+#visual #sliderMain .btnPrev {
+  left: 12vw;
+}
+#visual #sliderMain .btnPrev::after {
+  margin-top: 5px;
+  float: right;
+  display: block;
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.5);
+}
+#visual #sliderMain .btnPrev:hover::after {
+  width: 100%;
+}
+#visual #sliderMain .btnNext {
+  right: 12vw;
+}
+#visual #sliderMain .btnNext::after {
+  margin-top: 5px;
+  float: left;
+  display: block;
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.5);
+}
+#visual #sliderMain .btnNext:hover::after {
+  width: 100%;
+}
+
+#projects {
+  width: 100%;
+  padding: 50px 0;
+}
+#projects .inner {
+  width: 1180px;
+  margin: 0 auto;
+}
+#projects .inner .boxWrap::after {
+  content: "";
+  display: block;
+  clear: both;
+  width: 100%;
+}
+#projects .inner .boxWrap > div {
+  float: left;
+}
+#projects .inner .boxWrap > div::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#projects .inner .boxWrap > div.title_box {
+  width: 25%;
+}
+#projects .inner .boxWrap > div.title_box h1 {
+  font: bold 24px/1 "Karla";
+  color: #555;
+  position: relative;
+  margin-bottom: 10px;
+}
+#projects .inner .boxWrap > div.title_box h1::after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+#projects .inner .boxWrap > div.photo_box {
+  width: calc(100% - 20px);
+}
+#projects .inner .boxWrap > div.photo_box ul {
+  width: 100%;
+}
+#projects .inner .boxWrap > div.photo_box ul li {
+  float: left;
+  width: calc(25% - 2px);
+  height: 308px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5px;
+  margin: 1px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+#projects .inner .boxWrap > div.photo_box ul li::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#projects .inner .boxWrap > div.photo_box ul li:last-of-type {
+  margin-right: 0;
+}
+#projects .inner .boxWrap > div.photo_box ul li .bg_box {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+#projects .inner .boxWrap > div.photo_box ul li .bg_box:hover .txt_box {
+  opacity: 1;
+  transition: 0.5s;
+}
+#projects .inner .boxWrap > div.photo_box ul li .bg_box.bg_box1 {
+  background: url(../img/image4.jpg) no-repeat center/cover;
+}
+#projects .inner .boxWrap > div.photo_box ul li .bg_box.bg_box2 {
+  background: url(../img/trend2.jpg) no-repeat center/cover;
+}
+#projects .inner .boxWrap > div.photo_box ul li .bg_box.bg_box3 {
+  background: url(../img/trend3.jpg) no-repeat center/cover;
+}
+#projects .inner .boxWrap > div.photo_box ul li .bg_box.bg_box4 {
+  background: url(../img/trend4.jpg) no-repeat center/cover;
+}
+#projects .inner .boxWrap > div.photo_box ul li .txt_box {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 50px 30px 0;
+}
+#projects .inner .boxWrap > div.photo_box ul li .txt_box::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 60px);
+  height: 1px;
+  background: #fff;
+  opacity: 0.6;
+}
+#projects .inner .boxWrap > div.photo_box ul li .txt_box > h2 {
+  font: bold 24px/1.2 "Karla";
+  color: #333;
+  margin-bottom: 15px;
+}
+#projects .inner .boxWrap > div.photo_box ul li .txt_box > p {
+  font: bold 18px/1.2 "Karla";
+  color: #333;
+  margin-bottom: 50px;
+}
+#projects .inner .boxWrap > div.photo_box ul li .txt_box > a {
+  font: 14px/1 "Karla";
+}
+#projects .inner .boxWrap > div.photo_box ul li .txt_box .bottom_txt {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 25px 25px;
+}
+#projects .inner .boxWrap > div.photo_box ul li .txt_box .bottom_txt p {
+  font: bold 12px/1 "Karla";
+  color: #444;
+}
+#projects .inner .boxWrap > div.photo_box ul li .txt_box .bottom_txt p i {
+  margin-right: 5px;
+}
+#projects .inner .boxWrap > div.photo_box ul li .txt_box .bottom_txt a {
+  display: block;
+  font: bold 12px/1 "Karla";
+  color: #444;
+}
+#projects .inner .boxWrap > div.photo_box ul li .txt_box .bottom_txt a i {
+  margin-right: 5px;
+}
+
+#banner {
+  width: 100%;
+  padding: 150px 0;
+  background: url(../img/banner.jpg) no-repeat center/cover fixed;
+  position: relative;
+}
+#banner::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.7;
+}
+#banner .inner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#banner .inner h2 {
+  color: #fff;
+  margin-right: 40px;
+  font: 28px/1.4 #ddd "Karla";
+}
+#banner .inner .btnMore {
+  float: right;
+  right: 0px;
+  display: block;
+  width: 170px;
+  padding: 20px;
+  font: normal 12px/1 "Karla";
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  transition: 0.4s;
+  font-family: "Karla";
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+#banner .inner .btnMore:hover {
+  background-color: #333;
+}
+#banner .inner .btnMore:hover {
+  background-color: #ddd;
+}
+
+#footer {
+  width: 100%;
+  background: #999;
+  padding-top: 50px;
+  position: relative;
+}
+#footer .inner {
+  width: 1180px;
+  margin: 0 auto;
+}
+#footer .inner h1 {
+  font-size: 20px;
+  letter-spacing: 10px;
+  color: #fff;
+  text-align: left;
+  margin-bottom: 50px;
+  margin-left: 10px;
+}
+#footer .inner address {
+  width: 100%;
+  font: 10px/1 #ddd "Karla";
+  display: flex;
+  justify-content: center;
+  font-style: normal;
+  margin-bottom: 50px;
+}
+#footer .inner address article {
+  width: 380px;
+  text-align: center;
+}
+#footer .inner address article h2 {
+  font: 12px/1 #555 "Karla";
+  margin-bottom: 30px;
+}
+#footer .inner address article > p {
+  font: bold 10px #fff "Karla";
+}
+#footer .inner .bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#footer .inner .bottom a {
+  display: block;
+  width: 308px;
+  height: 80px;
+  font: normal 12px/80px "Karla";
+  text-align: center;
+  color: #eee;
+  display: block;
+  background: #999;
+}
+#footer .inner .bottom p {
+  color: #eee;
+  font-size: 10px;
+}
+#footer .inner .bottom .snsLink {
+  width: 120px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#footer .inner .bottom .snsLink li {
+  margin-right: 10px;
+}
+#footer .inner .bottom .snsLink li i {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: 0.5s;
+}
+#footer .inner .bottom .snsLink li:hover i {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=style.css.map */

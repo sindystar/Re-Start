@@ -1,0 +1,579 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap');
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+ul,
+ol,
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+
+
+body {
+	overflow-x: hidden;
+}
+
+@mixin btnStyle {
+	display: block;
+	width: 170px;
+	padding: 20px;
+	font: normal 12px/1 "Karla";
+	color: #fff;
+	border-radius: 5px;
+	// background-color: #333;
+	text-align: center;
+	transition: 0.4s;
+	&:hover {
+		background-color: #333;
+	}
+}
+
+#header {
+	width: 100%;
+    height: 630px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	.inner {
+		width: 1180px;
+		height: 100px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		h1 {
+			a {
+				font-size: 20px;
+				letter-spacing: 10px;
+				color: rgba(255, 255, 255, 0.9);
+			}
+		}
+		#gnb {
+			display: flex;
+			li {
+				a {
+					display: block;
+					padding: 10px 15px;
+					font : 15px "Karla";
+					color: rgba(255, 255, 255, 0.7);
+					border-radius: 20px;
+					margin-left: 15px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					transition: 0.4s;
+				}
+				&:hover {
+					a {
+						// background: #fff;
+                        color: #333;
+                        transition: 0.5s;
+					}
+				}
+				&.on {
+					a {
+						color: rgba(255, 255, 255, 0.7);
+                        
+					}
+				}
+			}
+		}
+	}
+}
+
+
+    #visual {
+        width: 100%;
+        // padding-top: 120px;
+        position: relative;
+        .inner {
+            width: 1180px;
+            height: 630px;
+            margin: 0 auto;
+            position: relative;
+            // .boxWrap {
+            // 	width: 100%;
+            // 	position: absolute;
+            // 	top: 150px;
+            // 	left: 0px;
+            // 	z-index: 10;
+            // 	.lineBox {
+            // 		width: 100%;
+            // 		padding: 50px;
+            // 		margin-bottom: 20px;
+            // 		text-align: right;
+            // 		justify-content: right;
+            // 		position: relative;
+            // 		.top {
+            // 			width: 0%;
+            // 			height: 5px;
+            // 			background: #333;
+            // 			position: absolute;
+            // 			top: 0px;
+            // 			left: 0px;
+            // 		}
+            // 		.right {
+            // 			width: 5px;
+            // 			height: 0%;
+            // 			background: #333;
+            // 			position: absolute;
+            // 			top: 0px;
+            // 			right: 0px;
+            // 		}
+            // 		.bottom {
+            // 			width: 0%;
+            // 			height: 5px;
+            // 			background: #333;
+            // 			position: absolute;
+            // 			bottom: 0px;
+            // 			right: 0px;
+            // 		}
+            // 		.left {
+            // 			width: 5px;
+            // 			height: 0%;
+            // 			background: #333;
+            // 			position: absolute;
+            // 			bottom: 0px;
+            // 			left: 0px;
+            // 		}
+            // 		.content {
+            // 			opacity: 0;
+            // 			h1 {
+            // 				font-size: 25px;
+            // 				margin-bottom: 20px;
+            // 			}
+            // 			h2 {
+            // 				font: bold 50px/1 "Karla";
+            // 				color: #333;
+            // 				margin-bottom: 20px;
+            // 			}
+            // 			p {
+            // 				font: bold 20px/1 "Karla";
+            // 				color: #333;
+            // 				margin-bottom: 5px;
+            // 			}
+            // 		}
+            // 	}
+            // 	.btnMore {
+            // 		float: right;
+            // 		right: 0px;
+            // 		// @include btnStyle;
+            // 	}
+            // }
+        }
+        #sliderMain {
+            width: 100%;
+            ul {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: calc(100% * 3);
+                height: 100%;
+                li {
+                    width: calc(100% / 3);
+                    height: 100%;
+                    float: left;
+                    position: relative;
+                    &[data-index="0"] {
+                        background: #ededf7;
+                        div {
+                            width: 1200px;
+                            position: absolute;
+                            top: 0;
+                            left: 10%;
+                            img {
+                                width: 95%;
+                                height: 95%;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                    &[data-index="1"] {
+                        background: #f6edf7;
+                        div {
+                            width: 1200px;
+                            position: absolute;
+                            top: -2%;
+                            left: 10%;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                    &[data-index="2"] {
+                        background: #555;
+                        div {
+                            width: 1200px;
+                            position: absolute;
+                            top: 15%;
+                            left: 14%;
+                            img {
+                                width: 75%;
+                                height: 75%;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                }
+            }
+            .btnPrev,
+            .btnNext {
+                position: absolute;
+                top: 300px;
+                z-index: 10;
+                padding: 20px;
+                font-size: 18px;
+                color: rgba(255, 255, 255, 0.5);
+                text-align: center;
+                span {
+                    display: block;
+                    font: normal 12px/1 "Karla";
+                }
+            }
+            .btnPrev {
+                left: 12vw;
+                &::after {
+                    margin-top: 5px;
+                    float: right;
+                    display: block;
+                    content: "";
+                    width: 0%;
+                    height: 2px;
+                    background: rgba(255, 255, 255, 0.5);
+                    // transition: 0.3s;
+                }
+                &:hover {
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+            .btnNext {
+                right: 12vw;
+                &::after {
+                    margin-top: 5px;
+                    float: left;
+                    display: block;
+                    content: "";
+                    width: 0%;
+                    height: 2px;
+                    background: rgba(255, 255, 255, 0.5)
+                    // transition: 0.3s;
+                }
+                &:hover {
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+            // .pagination {
+            // 	position: absolute;
+            // 	bottom: 50px;
+            // 	left: 50%;
+            // 	translate: translate(50%, 50%);
+            // 	a {
+            // 		display: block;
+            // 		width: 10px;
+            // 		height: 10px;
+            // 		border: 2px solid #333;
+            // 		border-radius: 50%;
+            // 		float: left;
+            // 		margin: 20px 4px;
+            // 		&.on {
+            // 			background: #333;
+            // 		}
+            // 	}
+            // }
+        }
+    }
+
+    #projects {
+        width: 100%;
+        padding: 50px 0;
+        .inner {
+        width: 1180px;
+        margin: 0 auto;
+        .boxWrap {
+            &::after {
+                content: "";
+                display: block;
+                clear: both;
+                width: 100%;
+            }
+            
+
+            >div {
+                float: left;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    clear: both;
+                }
+
+                &.title_box {
+                    width: 25%;
+                    h1 {
+                        font: bold 24px/1 'Karla';
+                        color: #555;
+                        position: relative;
+                        margin-bottom: 10px;
+                        &::after {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                        }
+                    }
+                }
+                &.photo_box {
+                    // border: solid 1px rgb(41, 13, 13);
+                    width: calc(100% - 20px);
+                    // height: 308px;
+                    ul {
+                        width: 100%;
+                        li {
+                            float: left;
+                            // border: solid 1px red;
+                            width: calc(25% - 2px);
+                            height: 308px;
+                            display: flex;
+                            justify-content: space-evenly;
+                            align-items: center;
+                            padding: 5px;
+                            margin: 1px;
+                            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+                            position: relative;
+                            &::after {
+                                content: "";
+                                display: block;
+                                clear: both;
+                            }
+                            &:last-of-type {
+                                margin-right: 0;
+                            }
+                            .bg_box {
+                                width: 100%;
+                                height: 100%;
+                                cursor: pointer;
+                                &:hover
+                                .txt_box{
+                                    opacity: 1;
+                                    transition: 0.5s;
+                                }
+                                &.bg_box1 {
+                                    background: url(../img/image4.jpg) no-repeat center/cover;
+                                }
+                                &.bg_box2 {
+                                    background: url(../img/trend2.jpg) no-repeat center/cover;
+                                }
+
+                                &.bg_box3 {
+                                    background: url(../img/trend3.jpg) no-repeat center/cover;
+                                }
+                                &.bg_box4 {
+                                    background: url(../img/trend4.jpg) no-repeat center/cover;
+                                }
+                            }
+                            .txt_box{
+                                opacity: 0;
+                                // border: 1px solid #111;
+                                width: 100%;
+                                height: 100%;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                background: rgba(255, 255, 255, 0.5);
+                                padding: 50px 30px 0;
+                                &::after{
+                                    content: "";
+                                    display: block;
+                                    position: absolute;
+                                    bottom: 50px;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                    width: calc(100% - 60px);
+                                    height: 1px;
+                                    background: #fff;
+                                    opacity: 0.6;
+                                }
+                                > h2 {
+                                    font: bold 24px/1.2 'Karla';
+                                    color: #333;
+                                    // letter-spacing: 1px;
+                                    margin-bottom: 15px;
+                                }
+                                > p {
+                                    font: bold 18px/1.2 'Karla';
+                                    // border: solid 1px rgb(40, 26, 26);
+                                    color: #333;
+                                    margin-bottom: 50px;
+                                }
+                                > a {
+                                    font: 14px/1 'Karla';
+                                }
+                                .bottom_txt{
+                                    width: 100%;
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: 0;
+                                    display: flex;
+                                    justify-content: space-around;
+                                    align-items: center;
+                                    padding: 25px 25px;
+                                    p{
+                                        font: bold 12px/1 'Karla';
+                                        color: #444;
+                                        i{
+                                        margin-right: 5px;
+                                        }
+                                    }
+                                    a{
+                                        display: block;
+                                        font: bold 12px/1 'Karla';
+                                        color: #444;
+                                        i{
+                                        margin-right: 5px;
+                                        }
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#banner {
+	width: 100%;
+	padding: 150px 0;
+	background: url(../img/banner.jpg) no-repeat center/cover fixed;
+	position: relative;
+
+	&::before {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-color: #333;
+		position: absolute;
+		left: 0;
+		top: 0;
+		opacity: 0.7;
+	}
+	.inner {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		h2 {
+			color: #fff;
+			margin-right: 40px;
+            font : 28px/1.4 #ddd "Karla";
+		}
+		.btnMore {
+			float: right;
+			right: 0px;
+			@include btnStyle;
+            font-family:"Karla";
+			color: #333;
+			background-color: rgba(255, 255, 255, 0.5);
+			&:hover {
+				background-color: #ddd
+			}
+		}
+	}
+}
+
+    #footer {
+        width: 100%;
+        background: #999;
+        padding-top: 50px;
+        position: relative;
+        .inner {
+            width: 1180px;
+            margin: 0 auto;
+            h1 {
+                font-size: 20px;
+                letter-spacing: 10px;
+                color: #fff;
+                text-align: left;
+                margin-bottom: 50px;
+                margin-left: 10px;
+            }
+            address {
+                width: 100%;
+                font: 10px/1 #ddd "Karla";
+                display: flex;
+                justify-content: center;
+                font-style: normal;
+                margin-bottom: 50px;
+                // font-size: 0;
+                article {
+                    width: 380px;
+                    text-align: center;
+                    // font-size: 0;
+                    h2 {
+                        font: 12px/1 #555 "Karla";
+                        margin-bottom: 30px;
+                    }
+                    >p {
+                        font : bold  10px #fff "Karla";
+                        // line-height: 20px
+                    }
+                }
+            }
+            .bottom {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                a {
+                    display: block;
+                    width: 308px;
+                    height: 80px;
+                    font: normal 12px/80px "Karla";
+                    text-align: center;
+                    color: #eee;
+                    display: block;
+                    background: #999;
+                    // border: solid 1px red;
+                }
+                p {
+                    color: #eee;
+                    font-size: 10px;
+                }
+                .snsLink {
+                    width: 120px;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    li {
+                        margin-right: 10px;
+                        i {
+                            font-size: 15px;
+                            color: rgba(255, 255, 255, 0.7);
+                            transition: 0.5s;					}
+                        &:hover i {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
