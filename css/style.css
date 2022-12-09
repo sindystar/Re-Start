@@ -445,7 +445,7 @@ body {
   color: rgba(255, 255, 255, 0.7);
   transition: 0.5s;
 }
-#footer .inner .bottom .snsLink li:hover i {
+#footer .inner .bottom .snsLink li i:hover i {
   opacity: 1;
 }
 
