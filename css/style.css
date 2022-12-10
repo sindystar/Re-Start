@@ -65,6 +65,7 @@ body {
 
 #visual {
   width: 100%;
+  position: absolute;
   position: relative;
 }
 #visual .inner {
@@ -179,90 +180,219 @@ body {
   width: 100%;
 }
 
-#projects {
+#portfolio {
   width: 100%;
-  padding: 50px 0;
 }
-#projects .inner {
+#portfolio .inner {
+  width: 1180px;
+  margin: 0 auto;
+  padding: 100px 0px 5px;
+  overflow: hidden;
+}
+#portfolio .inner::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#portfolio .inner h1 {
+  float: left;
+}
+#portfolio .inner .container {
+  width: 1180px;
+  float: left;
+  overflow: hidden;
+}
+#portfolio .inner .container .tab {
+  width: 1180px;
+  float: right;
+  margin: 5px 0px 5px;
+}
+#portfolio .inner .container .tab ul {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#portfolio .inner .container .tab ul li {
+  width: 100%;
+  height: 20px;
+  position: relative;
+  float: left;
+  margin-left: 0px;
+}
+#portfolio .inner .container .tab ul li a {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#portfolio .inner .container .tab ul li.on a {
+  color: #333;
+  font-family: "Karla";
+  font-weight: 900;
+}
+#portfolio .inner .container section {
+  width: 1180px;
+  height: 290px;
+  position: relative;
+  float: left;
+}
+#portfolio .inner .container section article {
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  overflow: hidden;
+  display: none;
+  opacity: 0;
+}
+#portfolio .inner .container section article.on {
+  display: block;
+  opacity: 1;
+}
+#portfolio .inner .container section article div {
+  width: 290px;
+  height: 100%;
+  float: left;
+  margin-right: 5px;
+  overflow: hidden;
+  position: relative;
+}
+#portfolio .inner .container section article div:last-of-type {
+  margin-right: 0px;
+}
+#portfolio .inner .container section article div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale 100%;
+  transition: 0.5s;
+}
+#portfolio .inner .container section article div p {
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  text-align: center;
+  font: bold 10px/1;
+  letter-spacing: 1px;
+  color: navy;
+  opacity: 0;
+  z-index: 5;
+}
+#portfolio .inner .container section article div::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 290px;
+  background-color: rgba(4, 63, 255, 0.08);
+  position: absolute;
+  bottom: -290px;
+  left: 0;
+  transition: 0.5s;
+  z-index: 3;
+}
+#portfolio .inner .container section article div:hover img {
+  transition: 0.5s;
+  transform: scale(1.3);
+}
+#portfolio .inner .container section article div:hover p {
+  opacity: 1;
+}
+#portfolio .inner .container section article div:hover::after {
+  bottom: 0px;
+  left: 0;
+}
+
+#news {
+  width: 100%;
+  padding: 100px 0;
+}
+#news .inner {
   width: 1180px;
   margin: 0 auto;
 }
-#projects .inner .boxWrap::after {
+#news .inner .boxWrap::after {
   content: "";
   display: block;
   clear: both;
   width: 100%;
 }
-#projects .inner .boxWrap > div {
+#news .inner .boxWrap > div {
   float: left;
 }
-#projects .inner .boxWrap > div::after {
+#news .inner .boxWrap > div::after {
   content: "";
   display: block;
   clear: both;
 }
-#projects .inner .boxWrap > div.title_box {
+#news .inner .boxWrap > div.title_box {
   width: 25%;
 }
-#projects .inner .boxWrap > div.title_box h1 {
-  font: bold 24px/1 "Karla";
-  color: #555;
+#news .inner .boxWrap > div.title_box h1 {
   position: relative;
   margin-bottom: 10px;
 }
-#projects .inner .boxWrap > div.title_box h1::after {
+#news .inner .boxWrap > div.title_box h1::after {
   content: "";
   display: block;
   position: absolute;
 }
-#projects .inner .boxWrap > div.photo_box {
-  width: calc(100% - 20px);
-}
-#projects .inner .boxWrap > div.photo_box ul {
+#news .inner .boxWrap > div.photo_box {
   width: 100%;
 }
-#projects .inner .boxWrap > div.photo_box ul li {
+#news .inner .boxWrap > div.photo_box ul {
+  width: 100%;
+}
+#news .inner .boxWrap > div.photo_box ul li {
   float: left;
   width: calc(25% - 2px);
-  height: 308px;
+  height: 290px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  padding: 5px;
-  margin: 1px;
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  padding: 2.5px;
+  margin: 0;
   position: relative;
 }
-#projects .inner .boxWrap > div.photo_box ul li::after {
+#news .inner .boxWrap > div.photo_box ul li::after {
   content: "";
   display: block;
   clear: both;
 }
-#projects .inner .boxWrap > div.photo_box ul li:last-of-type {
-  margin-right: 0;
+#news .inner .boxWrap > div.photo_box ul li:last-of-type {
+  margin-left: 0;
 }
-#projects .inner .boxWrap > div.photo_box ul li .bg_box {
+#news .inner .boxWrap > div.photo_box ul li .bg_box {
   width: 100%;
   height: 100%;
   cursor: pointer;
 }
-#projects .inner .boxWrap > div.photo_box ul li .bg_box:hover .txt_box {
+#news .inner .boxWrap > div.photo_box ul li .bg_box:hover .txt_box {
   opacity: 1;
   transition: 0.5s;
 }
-#projects .inner .boxWrap > div.photo_box ul li .bg_box.bg_box1 {
+#news .inner .boxWrap > div.photo_box ul li .bg_box.bg_box1 {
   background: url(../img/image4.jpg) no-repeat center/cover;
 }
-#projects .inner .boxWrap > div.photo_box ul li .bg_box.bg_box2 {
+#news .inner .boxWrap > div.photo_box ul li .bg_box.bg_box2 {
   background: url(../img/trend2.jpg) no-repeat center/cover;
 }
-#projects .inner .boxWrap > div.photo_box ul li .bg_box.bg_box3 {
+#news .inner .boxWrap > div.photo_box ul li .bg_box.bg_box3 {
   background: url(../img/trend3.jpg) no-repeat center/cover;
 }
-#projects .inner .boxWrap > div.photo_box ul li .bg_box.bg_box4 {
+#news .inner .boxWrap > div.photo_box ul li .bg_box.bg_box4 {
   background: url(../img/trend4.jpg) no-repeat center/cover;
 }
-#projects .inner .boxWrap > div.photo_box ul li .txt_box {
+#news .inner .boxWrap > div.photo_box ul li .txt_box {
   opacity: 0;
   width: 100%;
   height: 100%;
@@ -272,7 +402,7 @@ body {
   background: rgba(255, 255, 255, 0.5);
   padding: 50px 30px 0;
 }
-#projects .inner .boxWrap > div.photo_box ul li .txt_box::after {
+#news .inner .boxWrap > div.photo_box ul li .txt_box::after {
   content: "";
   display: block;
   position: absolute;
@@ -284,20 +414,20 @@ body {
   background: #fff;
   opacity: 0.6;
 }
-#projects .inner .boxWrap > div.photo_box ul li .txt_box > h2 {
+#news .inner .boxWrap > div.photo_box ul li .txt_box > h2 {
   font: bold 24px/1.2 "Karla";
   color: #333;
   margin-bottom: 15px;
 }
-#projects .inner .boxWrap > div.photo_box ul li .txt_box > p {
+#news .inner .boxWrap > div.photo_box ul li .txt_box > p {
   font: bold 18px/1.2 "Karla";
   color: #333;
   margin-bottom: 50px;
 }
-#projects .inner .boxWrap > div.photo_box ul li .txt_box > a {
+#news .inner .boxWrap > div.photo_box ul li .txt_box > a {
   font: 14px/1 "Karla";
 }
-#projects .inner .boxWrap > div.photo_box ul li .txt_box .bottom_txt {
+#news .inner .boxWrap > div.photo_box ul li .txt_box .bottom_txt {
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -307,19 +437,19 @@ body {
   align-items: center;
   padding: 25px 25px;
 }
-#projects .inner .boxWrap > div.photo_box ul li .txt_box .bottom_txt p {
+#news .inner .boxWrap > div.photo_box ul li .txt_box .bottom_txt p {
   font: bold 12px/1 "Karla";
   color: #444;
 }
-#projects .inner .boxWrap > div.photo_box ul li .txt_box .bottom_txt p i {
+#news .inner .boxWrap > div.photo_box ul li .txt_box .bottom_txt p i {
   margin-right: 5px;
 }
-#projects .inner .boxWrap > div.photo_box ul li .txt_box .bottom_txt a {
+#news .inner .boxWrap > div.photo_box ul li .txt_box .bottom_txt a {
   display: block;
   font: bold 12px/1 "Karla";
   color: #444;
 }
-#projects .inner .boxWrap > div.photo_box ul li .txt_box .bottom_txt a i {
+#news .inner .boxWrap > div.photo_box ul li .txt_box .bottom_txt a i {
   margin-right: 5px;
 }
 
