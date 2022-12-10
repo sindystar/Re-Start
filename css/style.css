@@ -93,7 +93,7 @@ body {
   color: #fff;
   background-color: #333;
   text-align: center;
-  transition: 0.4s;
+  transition: 0.3s;
 }
 #visual .btnMore:hover {
   background-color: #333;
@@ -297,12 +297,12 @@ body {
   display: block;
   width: 100%;
   position: absolute;
-  bottom: 15px;
+  bottom: 20px;
   left: 0;
   text-align: center;
-  font: bold 10px/1;
-  letter-spacing: 1px;
-  color: navy;
+  font-size: 15px;
+  font-weight: 700;
+  color: #222;
   opacity: 0;
   z-index: 5;
 }
