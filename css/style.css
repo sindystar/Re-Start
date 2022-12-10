@@ -44,7 +44,6 @@ body {
   align-items: center;
 }
 #header .inner h1 a {
-  border: solid 1px black;
   font-weight: 900;
   letter-spacing: 10px;
   color: rgba(255, 255, 255, 0.9);
@@ -229,36 +228,30 @@ body {
 }
 #portfolio .inner .container .tab {
   width: 1180px;
-  float: right;
-  margin: 5px 0px 5px;
+  float: left;
+  margin-top: 5px;
 }
 #portfolio .inner .container .tab ul {
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 #portfolio .inner .container .tab ul li {
   width: 100%;
-  height: 20px;
+  height: 40px;
   position: relative;
   float: left;
-  margin-left: 0px;
+  font-size: 24px;
+  font-weight: 500;
 }
 #portfolio .inner .container .tab ul li a {
   display: block;
   position: absolute;
   width: 100%;
-  height: 100%;
-  font-size: 14px;
+  height: 40px;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
 }
 #portfolio .inner .container .tab ul li.on a {
   color: #333;
-  font-family: "Karla";
-  font-weight: 900;
 }
 #portfolio .inner .container section {
   width: 1180px;
@@ -409,7 +402,7 @@ body {
   background: url(../img/image4.jpg) no-repeat center/cover;
 }
 #news .inner .boxWrap > div.photo_box ul li .bg_box.bg_box2 {
-  background: url(../img/trend2.jpg) no-repeat center/cover;
+  background: url(../img/3.jpg) no-repeat center/cover;
 }
 #news .inner .boxWrap > div.photo_box ul li .bg_box.bg_box3 {
   background: url(../img/trend3.jpg) no-repeat center/cover;
@@ -479,10 +472,9 @@ body {
 }
 
 #banner {
-  border: solid 1px red;
   width: 100%;
   padding: 180px 0;
-  background: url(../img/banner.jpg) no-repeat center/cover fixed;
+  background: url(../img/banner3.jpg) no-repeat center/cover fixed;
   position: relative;
 }
 #banner::before {
@@ -494,7 +486,7 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 #banner .inner {
   width: 100%;
