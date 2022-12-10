@@ -44,6 +44,7 @@ body {
   align-items: center;
 }
 #header .inner h1 a {
+  border: solid 1px black;
   font-weight: 900;
   letter-spacing: 10px;
   color: rgba(255, 255, 255, 0.9);
@@ -56,7 +57,7 @@ body {
   border: 1px solid red;
   padding: 10px 10px;
   font: 15px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #eee;
   margin-left: 15px;
   display: flex;
   justify-content: center;
@@ -91,7 +92,6 @@ body {
   padding: 20px;
   font: normal 12px/1;
   color: #fff;
-  border-radius: 5px;
   background-color: #333;
   text-align: center;
   transition: 0.4s;
@@ -479,8 +479,9 @@ body {
 }
 
 #banner {
+  border: solid 1px red;
   width: 100%;
-  padding: 150px 0;
+  padding: 180px 0;
   background: url(../img/banner.jpg) no-repeat center/cover fixed;
   position: relative;
 }
@@ -493,7 +494,7 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 #banner .inner {
   width: 100%;
@@ -503,23 +504,27 @@ body {
   position: relative;
 }
 #banner .inner h2 {
-  color: #fff;
-  margin-right: 40px;
-  font: 28px/1.4 #ddd;
+  margin: 30px;
+  font-size: 40px;
+  font-style: italic;
+  color: #ddd;
+  z-index: 5;
 }
 #banner .inner .btnMore {
   float: right;
   right: 0px;
-  color: #333;
+  color: rgb(254, 254, 254);
   background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  padding: 5px;
 }
 #banner .inner .btnMore:hover {
-  background-color: #ddd;
+  background-color: rgba(18, 1, 255, 0.05);
 }
 
 #footer {
   width: 100%;
-  background: #999;
+  background: #aaa;
   padding-top: 50px;
   position: relative;
 }
@@ -528,14 +533,13 @@ body {
   margin: 0 auto;
 }
 #footer .inner h1 {
-  border: solid 1px red;
-  font-size: 30px;
-  font-weight: 900;
+  margin-left: 177px;
+  font-size: 40px;
+  font-weight: 600;
   letter-spacing: 1px;
   color: #fff;
   text-align: left;
   margin-bottom: 50px;
-  margin-left: 10px;
 }
 #footer .inner address {
   width: 100%;
@@ -564,23 +568,27 @@ body {
 }
 #footer .inner .bottom a {
   display: block;
-  width: 308px;
-  height: 80px;
-  font: normal 12px/80px;
+  width: 380px;
+  height: 30px;
+  font: normal 12px/60px;
   text-align: center;
-  color: #eee;
+  margin-left: 20px;
+  color: #fff;
   display: block;
-  background: #999;
+  background: #aaa;
 }
 #footer .inner .bottom p {
+  width: 380px;
+  margin-left: 80px;
   color: #eee;
-  font-size: 10px;
+  font-size: 12px;
 }
 #footer .inner .bottom .snsLink {
   width: 120px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-right: 140px;
 }
 #footer .inner .bottom .snsLink li {
   margin-right: 10px;
