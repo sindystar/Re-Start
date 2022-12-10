@@ -3,11 +3,13 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: "Karla";
+  color: #222;
 }
 
 ul,
-ol,
-li {
+li,
+ol {
   list-style: none;
 }
 
@@ -15,11 +17,17 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  font-size: 48px;
+  font-weight: 500;
+}
+
 body {
   overflow-x: hidden;
 }
 
 #header {
+  border: solid 1px blue;
   width: 100%;
   height: 630px;
   position: absolute;
@@ -36,7 +44,7 @@ body {
   align-items: center;
 }
 #header .inner h1 a {
-  font-size: 20px;
+  font-weight: 900;
   letter-spacing: 10px;
   color: rgba(255, 255, 255, 0.9);
 }
@@ -45,10 +53,10 @@ body {
 }
 #header .inner #gnb li a {
   display: block;
-  padding: 10px 15px;
-  font: 15px "Karla";
+  border: 1px solid red;
+  padding: 10px 10px;
+  font: 15px;
   color: rgba(255, 255, 255, 0.7);
-  border-radius: 20px;
   margin-left: 15px;
   display: flex;
   justify-content: center;
@@ -65,6 +73,7 @@ body {
 
 #visual {
   width: 100%;
+  width: 1180px;
   position: absolute;
   position: relative;
 }
@@ -74,10 +83,27 @@ body {
   margin: 0 auto;
   position: relative;
 }
-#visual #sliderMain {
+#visual .btnMore {
+  float: right;
+  right: 0px;
+  display: block;
+  width: 170px;
+  padding: 20px;
+  font: normal 12px/1;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #333;
+  text-align: center;
+  transition: 0.4s;
+}
+#visual .btnMore:hover {
+  background-color: #333;
+}
+
+#sliderMain {
   width: 100%;
 }
-#visual #sliderMain ul {
+#sliderMain ul {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -86,73 +112,72 @@ body {
   width: 300%;
   height: 100%;
 }
-#visual #sliderMain ul li {
+#sliderMain ul li {
   width: 33.3333333333%;
   height: 100%;
   float: left;
   position: relative;
 }
-#visual #sliderMain ul li[data-index="0"] {
+#sliderMain ul li[data-index="0"] {
   background: #ededf7;
 }
-#visual #sliderMain ul li[data-index="0"] div {
-  width: 1200px;
+#sliderMain ul li[data-index="0"] div {
+  width: 100%;
   position: absolute;
   top: 0;
-  left: 10%;
+  left: 0;
 }
-#visual #sliderMain ul li[data-index="0"] div img {
-  width: 95%;
-  height: 95%;
+#sliderMain ul li[data-index="0"] div img {
+  width: 100%;
   object-fit: cover;
 }
-#visual #sliderMain ul li[data-index="1"] {
+#sliderMain ul li[data-index="1"] {
   background: #f6edf7;
 }
-#visual #sliderMain ul li[data-index="1"] div {
-  width: 1200px;
-  position: absolute;
-  top: -2%;
-  left: 10%;
-}
-#visual #sliderMain ul li[data-index="1"] div img {
+#sliderMain ul li[data-index="1"] div {
   width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#sliderMain ul li[data-index="1"] div img {
+  width: 100%;
   object-fit: cover;
 }
-#visual #sliderMain ul li[data-index="2"] {
+#sliderMain ul li[data-index="2"] {
   background: #555;
 }
-#visual #sliderMain ul li[data-index="2"] div {
-  width: 1200px;
+#sliderMain ul li[data-index="2"] div {
+  width: 100%;
   position: absolute;
-  top: 15%;
-  left: 14%;
+  top: 0;
+  left: 0;
 }
-#visual #sliderMain ul li[data-index="2"] div img {
-  width: 75%;
-  height: 75%;
+#sliderMain ul li[data-index="2"] div img {
+  width: 100%;
   object-fit: cover;
 }
-#visual #sliderMain .btnPrev,
-#visual #sliderMain .btnNext {
+#sliderMain .btnPrev,
+#sliderMain .btnNext {
+  border: solid 1px rebeccapurple;
   position: absolute;
   top: 300px;
   z-index: 10;
   padding: 20px;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 900;
   color: rgba(255, 255, 255, 0.5);
   text-align: center;
 }
-#visual #sliderMain .btnPrev span,
-#visual #sliderMain .btnNext span {
+#sliderMain .btnPrev span,
+#sliderMain .btnNext span {
   display: block;
-  font: normal 12px/1 "Karla";
+  font: normal 12px/1;
 }
-#visual #sliderMain .btnPrev {
+#sliderMain .btnPrev {
   left: 12vw;
 }
-#visual #sliderMain .btnPrev::after {
+#sliderMain .btnPrev::after {
   margin-top: 5px;
   float: right;
   display: block;
@@ -161,13 +186,13 @@ body {
   height: 2px;
   background: rgba(255, 255, 255, 0.5);
 }
-#visual #sliderMain .btnPrev:hover::after {
+#sliderMain .btnPrev:hover::after {
   width: 100%;
 }
-#visual #sliderMain .btnNext {
+#sliderMain .btnNext {
   right: 12vw;
 }
-#visual #sliderMain .btnNext::after {
+#sliderMain .btnNext::after {
   margin-top: 5px;
   float: left;
   display: block;
@@ -176,7 +201,7 @@ body {
   height: 2px;
   background: rgba(255, 255, 255, 0.5);
 }
-#visual #sliderMain .btnNext:hover::after {
+#sliderMain .btnNext:hover::after {
   width: 100%;
 }
 
@@ -415,7 +440,7 @@ body {
   opacity: 0.6;
 }
 #news .inner .boxWrap > div.photo_box ul li .txt_box > h2 {
-  font: bold 24px/1.2 "Karla";
+  font: bold 24px/1.2;
   color: #333;
   margin-bottom: 15px;
 }
@@ -425,7 +450,7 @@ body {
   margin-bottom: 50px;
 }
 #news .inner .boxWrap > div.photo_box ul li .txt_box > a {
-  font: 14px/1 "Karla";
+  font: 14px/1;
 }
 #news .inner .boxWrap > div.photo_box ul li .txt_box .bottom_txt {
   width: 100%;
@@ -446,7 +471,7 @@ body {
 }
 #news .inner .boxWrap > div.photo_box ul li .txt_box .bottom_txt a {
   display: block;
-  font: bold 12px/1 "Karla";
+  font: bold 12px/1;
   color: #444;
 }
 #news .inner .boxWrap > div.photo_box ul li .txt_box .bottom_txt a i {
@@ -480,25 +505,13 @@ body {
 #banner .inner h2 {
   color: #fff;
   margin-right: 40px;
-  font: 28px/1.4 #ddd "Karla";
+  font: 28px/1.4 #ddd;
 }
 #banner .inner .btnMore {
   float: right;
   right: 0px;
-  display: block;
-  width: 170px;
-  padding: 20px;
-  font: normal 12px/1 "Karla";
-  color: #fff;
-  border-radius: 5px;
-  text-align: center;
-  transition: 0.4s;
-  font-family: "Karla";
   color: #333;
   background-color: rgba(255, 255, 255, 0.5);
-}
-#banner .inner .btnMore:hover {
-  background-color: #333;
 }
 #banner .inner .btnMore:hover {
   background-color: #ddd;
@@ -515,8 +528,10 @@ body {
   margin: 0 auto;
 }
 #footer .inner h1 {
-  font-size: 20px;
-  letter-spacing: 10px;
+  border: solid 1px red;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 1px;
   color: #fff;
   text-align: left;
   margin-bottom: 50px;
@@ -524,7 +539,7 @@ body {
 }
 #footer .inner address {
   width: 100%;
-  font: 10px/1 #ddd "Karla";
+  font: bold 10px/1 #ddd;
   display: flex;
   justify-content: center;
   font-style: normal;
@@ -535,11 +550,11 @@ body {
   text-align: center;
 }
 #footer .inner address article h2 {
-  font: 12px/1 #555 "Karla";
+  font: 12px/1 #555;
   margin-bottom: 30px;
 }
 #footer .inner address article > p {
-  font: bold 10px #fff "Karla";
+  font: bold 10px #fff;
 }
 #footer .inner .bottom {
   width: 100%;
@@ -551,7 +566,7 @@ body {
   display: block;
   width: 308px;
   height: 80px;
-  font: normal 12px/80px "Karla";
+  font: normal 12px/80px;
   text-align: center;
   color: #eee;
   display: block;
