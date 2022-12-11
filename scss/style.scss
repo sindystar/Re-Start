@@ -2,6 +2,8 @@
 @import "reset.scss";
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap');
 
+$tablet:1179px;
+$mobile:539px;
 
 @mixin btnStyle {
 	display: block;
@@ -14,7 +16,7 @@
 	text-align: center;
 	transition: 0.3s;
 	&:hover {
-		background-color: #333;
+		background-color: #eee;
 	}
 }
 
@@ -75,153 +77,153 @@
     }
 
 
-    #visual {
-        width: 100%;
-        width: 1180px;
-        // padding-top: 120px;
-        position: absolute;
-        position: relative;
-        .inner {
-            width: 1180px;
-            height: 630px ;
-            margin: 0 auto;
-            position: relative;
+    // #visual {
+    //     width: 100%;
+    //     width: 1180px;
+    //     // padding-top: 120px;
+    //     position: absolute;
+    //     position: relative;
+    //     .inner {
+    //         width: 1180px;
+    //         height: 630px ;
+    //         margin: 0 auto;
+    //         position: relative;
 
-                }
-                .btnMore {
-                    float: right;
-                    right: 0px;
-                    @include btnStyle;
-                }
-            }
-        #sliderMain {
-            width: 100%;
-            ul {
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: calc(100% * 3);
-                height: 100%;
-                li {
-                    width: calc(100% / 3);
-                    height: 100%;
-                    float: left;
-                    position: relative;
-                    &[data-index="0"] {
-                        background: #ededf7;
-                        div {
-                            width: 100%;
-                            position: absolute;
-                            top: 0;
-                            left:0;
-                            img {
-                                width: 100%;
-                                object-fit: cover;
-                            }
-                        }
-                    }
-                    &[data-index="1"] {
-                        background: #f6edf7;
-                        div {
-                            width: 100%;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            img {
-                                width: 100%;
-                                object-fit: cover;
-                            }
-                        }
-                    }
-                    &[data-index="2"] {
-                        background: #555;
-                        div {
-                            width: 100%;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            img {
-                                width: 100%;
-                                object-fit: cover;
-                            }
-                        }
-                    }
-                }
-            }
-            .btnPrev,
-            .btnNext {
-                border: solid 1px rebeccapurple;
-                position: absolute;
-                // position: relative;
-                top: 300px;
-                z-index: 10;
-                padding: 20px;
-                font-size: 16px;
-                font-weight: 900;
-                color: rgba(255, 255, 255, 0.5);
-                text-align: center;
-                span {
-                    display: block;
-                    font: normal 12px/1 ;
-                }
-            }
-            .btnPrev {
-                left: 12vw;
-                &::after {
-                    margin-top: 5px;
-                    float: right;
-                    display: block;
-                    content: "";
-                    width: 0%;
-                    height: 2px;
-                    background: rgba(255, 255, 255, 0.5);
-                    // transition: 0.3s;
-                }
-                &:hover {
-                    &::after {
-                        width: 100%;
-                    }
-                }
-            }
-            .btnNext {
-                right: 12vw;
-                &::after {
-                    margin-top: 5px;
-                    float: left;
-                    display: block;
-                    content: "";
-                    width: 0%;
-                    height: 2px;
-                    background: rgba(255, 255, 255, 0.5)
-                    // transition: 0.3s;
-                }
-                &:hover {
-                    &::after {
-                        width: 100%;
-                    }
-                }
-            }
-            // .pagination {
-            // 	position: absolute;
-            // 	bottom: 50px;
-            // 	left: 50%;
-            // 	translate: translate(50%, 50%);
-            // 	a {
-            // 		display: block;
-            // 		width: 10px;
-            // 		height: 10px;
-            // 		border: 2px solid #333;
-            // 		border-radius: 50%;
-            // 		float: left;
-            // 		margin: 20px 4px;
-            // 		&.on {
-            // 			background: #333;
-            // 		}
-            // 	}
-            // }
-        }
+    //             }
+    //             .btnMore {
+    //                 float: right;
+    //                 right: 0px;
+    //                 @include btnStyle;
+    //             }
+    //         }
+    //     #sliderMain {
+    //         width: 100%;
+    //         ul {
+    //             width: 100%;
+    //             height: 100%;
+    //             position: absolute;
+    //             top: 0;
+    //             left: 0;
+    //             width: calc(100% * 3);
+    //             height: 100%;
+    //             li {
+    //                 width: calc(100% / 3);
+    //                 height: 100%;
+    //                 float: left;
+    //                 position: relative;
+    //                 &[data-index="0"] {
+    //                     background: #ededf7;
+    //                     div {
+    //                         width: 100%;
+    //                         position: absolute;
+    //                         top: 0;
+    //                         left:0;
+    //                         img {
+    //                             width: 100%;
+    //                             object-fit: cover;
+    //                         }
+    //                     }
+    //                 }
+    //                 &[data-index="1"] {
+    //                     background: #f6edf7;
+    //                     div {
+    //                         width: 100%;
+    //                         position: absolute;
+    //                         top: 0;
+    //                         left: 0;
+    //                         img {
+    //                             width: 100%;
+    //                             object-fit: cover;
+    //                         }
+    //                     }
+    //                 }
+    //                 &[data-index="2"] {
+    //                     background: #555;
+    //                     div {
+    //                         width: 100%;
+    //                         position: absolute;
+    //                         top: 0;
+    //                         left: 0;
+    //                         img {
+    //                             width: 100%;
+    //                             object-fit: cover;
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //         .btnPrev,
+    //         .btnNext {
+    //             border: solid 1px rebeccapurple;
+    //             position: absolute;
+    //             // position: relative;
+    //             top: 300px;
+    //             z-index: 10;
+    //             padding: 20px;
+    //             font-size: 16px;
+    //             font-weight: 900;
+    //             color: rgba(255, 255, 255, 0.5);
+    //             text-align: center;
+    //             span {
+    //                 display: block;
+    //                 font: normal 12px/1 ;
+    //             }
+    //         }
+    //         .btnPrev {
+    //             left: 12vw;
+    //             &::after {
+    //                 margin-top: 5px;
+    //                 float: right;
+    //                 display: block;
+    //                 content: "";
+    //                 width: 0%;
+    //                 height: 2px;
+    //                 background: rgba(255, 255, 255, 0.5);
+    //                 // transition: 0.3s;
+    //             }
+    //             &:hover {
+    //                 &::after {
+    //                     width: 100%;
+    //                 }
+    //             }
+    //         }
+    //         .btnNext {
+    //             right: 12vw;
+    //             &::after {
+    //                 margin-top: 5px;
+    //                 float: left;
+    //                 display: block;
+    //                 content: "";
+    //                 width: 0%;
+    //                 height: 2px;
+    //                 background: rgba(255, 255, 255, 0.5)
+    //                 // transition: 0.3s;
+    //             }
+    //             &:hover {
+    //                 &::after {
+    //                     width: 100%;
+    //                 }
+    //             }
+    //         }
+    //         // .pagination {
+    //         // 	position: absolute;
+    //         // 	bottom: 50px;
+    //         // 	left: 50%;
+    //         // 	translate: translate(50%, 50%);
+    //         // 	a {
+    //         // 		display: block;
+    //         // 		width: 10px;
+    //         // 		height: 10px;
+    //         // 		border: 2px solid #333;
+    //         // 		border-radius: 50%;
+    //         // 		float: left;
+    //         // 		margin: 20px 4px;
+    //         // 		&.on {
+    //         // 			background: #333;
+    //         // 		}
+    //         // 	}
+    //         // }
+    //     }
     
 
 	#portfolio {
@@ -660,3 +662,227 @@
         }
     }
 }
+
+// tablet 커스텀
+// @media screen and (max-width: 1179px) {
+// 	body {
+// 		// padding: 0vh 0vw;
+// 		// header 영역
+// 		#header {
+// 			// width: 100%;
+// 			height: 15vh;
+// 			.inner {
+// 				width: 100%;
+// 				// height: 15vh;
+// 				padding: 0vh 5vw;
+// 				// align-items: center;
+// 				// border: 1px solid red;
+// 				h1 {
+// 					display: none;
+// 				}
+// 				.nav_web {
+// 					display: none;
+// 				}
+// 			}
+// 		}
+
+// 		// visual 영역
+// 		#visual {
+// 			width: 100%;
+// 			height: calc(100vh - 19vh);
+// 			overflow: visible;
+// 			.inner {
+// 				.txt {
+// 					width: 25%;
+// 					position: absolute;
+// 					h1 {
+// 						// font-size: 12vh;
+// 						width: 30%;
+// 						margin-top: -110px;
+// 						margin-left: -12vw;
+// 					}
+// 					p {
+// 						margin-top: -200px;
+// 						margin-left: -12vw;
+// 					}
+// 				}
+// 				.pic {
+// 					// width: 45vw;
+// 					height: 650px;
+// 					margin-right: 5vw;
+// 					z-index: -1;
+// 				}
+// 			}
+// 			.wrap {
+// 				// position: relative;
+// 				#slider {
+// 					margin: 5vh 5vw;
+// 				}
+// 				.prev {
+// 					img {
+// 						margin-bottom: 20vh;
+// 						margin-left: 16vw;
+// 					}
+// 				}
+// 				.next {
+// 					img {
+// 						margin-bottom: 13vh;
+// 						margin-left: 5vw;
+// 					}
+// 				}
+// 				.pagination {
+// 					display: none;
+// 				}
+// 			}
+// 		}
+
+// 		// about 영역
+// 		#about {
+// 			.inner {
+// 				width: 100%;
+// 				padding: 3vw 5vw 5vw;
+// 				.txt {
+// 					display: flex;
+// 					flex-direction: column;
+// 					h2 {
+// 						width: 100%;
+// 						margin-bottom: 15px;
+// 					}
+// 					p {
+// 						width: 100%;
+// 					}
+// 				}
+// 			}
+// 		}
+// 		#portfolio {
+// 			.inner {
+// 				width: 100%;
+// 				padding: 3vw 5vw 5vw;
+// 			}
+// 		}
+// 		#awards {
+// 			.inner {
+// 				width: 100%;
+// 				height: 670px;
+// 				padding: 3vw 5vw 5vw;
+// 				.container {
+// 					margin-top: 6vh;
+// 				}
+// 			}
+// 		}
+// 		#contact {
+// 			.inner {
+// 				width: 100%;
+// 				padding: 3vw 5vw 5vw;
+// 				h1 {
+// 					width: 100%;
+// 				}
+// 				p {
+// 					display: none;
+// 				}
+// 				.wrap {
+// 					margin: 5vh 4vw 6vh 0vw;
+// 					div {
+// 						input[type="submit"] {
+// 							margin: -1vh 5vw;
+// 						}
+// 					}
+// 				}
+// 			}
+// 		}
+// 		#footer {
+// 			.inner {
+// 				width: 100%;
+// 				padding: 3vw 5vw 5vw;
+// 			}
+// 		}
+// 	}
+// }
+
+
+// 반응형 사이즈 확인후 작업 할것 
+
+    // @media screen and (max-width:1179px) {
+    //     body {
+    //     header {
+    //         width: 100%;
+    //         height: 80px;
+    //         position: relative;
+    //         h1 {
+    //         font: bold 24px/1 ;
+    //         transform: translateY(-50%);
+    //         &::before {
+    //             display: none;
+    //         }
+    //         &::after {
+    //             display: none;
+    //         }
+    //         }
+    //         ul {
+    //         bottom: 25px;
+    //         left: auto;
+    //         right: 50px;
+    //         li {
+    //             margin-right: 20px;
+    //             a {
+    //             span {
+    //                 display: none;
+    //             }
+    //             }
+    //         }
+    //         }
+    //     }main {
+    //         margin-left: 0;
+    //     }
+    //     }  
+    // }
+    
+    // @media screen and (max-width:899px) {
+    //     body {
+    //     main {
+    //         section {
+    //         article {
+    //             width: 33.333%;
+    //         }
+    //         }
+    //     }
+    //     }
+    // }
+    
+    // @media screen and (max-width:679px) {
+    //     body {
+    //     main {
+    //         section {
+    //         article {
+    //             width: 50%;
+    //         }
+    //         }
+    //     }
+    //     }  
+    // }
+    // @media screen and (max-width:539px) {
+    //     body {
+    //     header {
+    //         ul {
+    //         display: none;
+    //         }
+    //     }
+    //     main {
+    //         ul {
+    //         width: 100%;
+    //         li {
+    //             width: 32%;
+    //             margin-left: 2%;
+    //             &:first-child {
+    //             margin-left: 0;
+    //             }
+    //         }
+    //         }
+    //         section {
+    //         article {
+    //             width: 100%;
+    //         }
+    //         }
+    //     }
+    //     }
+    // }
