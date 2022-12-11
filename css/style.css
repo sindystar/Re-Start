@@ -27,7 +27,6 @@ body {
 }
 
 #header {
-  border: solid 1px blue;
   width: 100%;
   height: 100% px;
   position: absolute;
@@ -47,16 +46,18 @@ body {
   font-weight: 900;
   letter-spacing: 10px;
   color: rgba(255, 255, 255, 0.9);
+  margin-left: 50px;
 }
 #header .inner #gnb {
   display: flex;
+  margin-right: 50px;
 }
 #header .inner #gnb li a {
   display: block;
-  border: 1px solid red;
   padding: 10px 10px;
   font: 15px;
-  color: #eee;
+  font-weight: 900px;
+  color: #fff;
   margin-left: 15px;
   display: flex;
   justify-content: center;
@@ -86,7 +87,7 @@ body {
   position: absolute;
   width: 100%;
   position: absolute;
-  margin-top: 220px;
+  margin-top: 250px;
   z-index: 10;
 }
 #visual .inner .txt p {
@@ -109,7 +110,7 @@ body {
 }
 #visual .inner .pic {
   width: 470px;
-  height: 650px;
+  height: 600px;
   position: absolute;
   bottom: 100px;
   right: 0;
@@ -117,18 +118,17 @@ body {
 }
 #visual .inner .pic > img {
   width: 100%;
-  height: 650px;
+  height: 600px;
   object-fit: cover;
   filter: saturate(70%);
 }
 #visual .inner .wrap {
   width: 100%;
-  height: 630px;
-  border: 1px solid red;
+  height: 600px;
 }
 #visual .inner .wrap #slider {
   width: 1180px;
-  height: 630px;
+  height: 600px;
   position: absolute;
   left: 0;
   overflow: hidden;
@@ -158,8 +158,9 @@ body {
 #visual .inner .wrap .prev img {
   width: 100px;
   position: absolute;
-  left: 150px;
-  bottom: 93px;
+  left: 50px;
+  bottom: 250px;
+  opacity: 0.5;
 }
 #visual .inner .wrap .next {
   width: 100%;
@@ -168,8 +169,29 @@ body {
 #visual .inner .wrap .next img {
   width: 100px;
   position: absolute;
-  left: 25%;
-  bottom: 93px;
+  right: 50px;
+  bottom: 250px;
+  opacity: 0.5;
+  transition: 0.5s;
+  z-index: 5;
+}
+#visual .inner .wrap .next::after {
+  content: "";
+  display: block;
+  clear: both;
+  width: 0px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -250px;
+  left: 0;
+  transition: 0.5s;
+  z-index: 3;
+}
+#visual .inner .wrap .next:hover img {
+  cursor: pointer;
+  transition: 0.5s;
+  transform: scale(1.2);
 }
 #visual .inner .wrap .pagination {
   position: absolute;
@@ -187,6 +209,7 @@ body {
   margin: 0 auto;
   padding: 100px 0px 5px;
   overflow: hidden;
+  position: relative;
 }
 #portfolio .inner::after {
   content: "";
@@ -201,10 +224,16 @@ body {
   float: left;
   overflow: hidden;
 }
+#portfolio .inner .container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
 #portfolio .inner .container .tab {
-  width: 1180px;
+  width: 500px;
   float: left;
-  margin-top: 5px;
+  margin-top: 15px;
+  padding-bottom: 5px;
 }
 #portfolio .inner .container .tab ul {
   width: 100%;
@@ -212,10 +241,10 @@ body {
 }
 #portfolio .inner .container .tab ul li {
   width: 100%;
-  height: 40px;
+  height: 30px;
   position: relative;
   float: left;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 500;
 }
 #portfolio .inner .container .tab ul li a {
@@ -226,7 +255,8 @@ body {
   display: flex;
 }
 #portfolio .inner .container .tab ul li.on a {
-  color: #333;
+  color: rgb(27, 113, 234);
+  font-weight: 700;
 }
 #portfolio .inner .container section {
   width: 1180px;
@@ -236,7 +266,7 @@ body {
 }
 #portfolio .inner .container section article {
   width: 100%;
-  height: 100%;
+  height: 290px;
   transition: 0.5s;
   position: absolute;
   top: 0;
@@ -248,6 +278,7 @@ body {
 }
 #portfolio .inner .container section article.on {
   display: block;
+  position: relative;
   opacity: 1;
 }
 #portfolio .inner .container section article div {
@@ -265,7 +296,6 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale 100%;
   transition: 0.5s;
 }
 #portfolio .inner .container section article div p {
@@ -374,16 +404,16 @@ body {
   transition: 0.5s;
 }
 #news .inner .boxWrap > div.photo_box ul li .bg_box.bg_box1 {
-  background: url(../img/image4.jpg) no-repeat center/cover;
+  background: url(../img/news/pic1.jpg) no-repeat center/cover;
 }
 #news .inner .boxWrap > div.photo_box ul li .bg_box.bg_box2 {
-  background: url(../img/3.jpg) no-repeat center/cover;
+  background: url(../img/news/pic2.jpg) no-repeat center/cover;
 }
 #news .inner .boxWrap > div.photo_box ul li .bg_box.bg_box3 {
-  background: url(../img/trend3.jpg) no-repeat center/cover;
+  background: url(../img/news/pic3.jpg) no-repeat center/cover;
 }
 #news .inner .boxWrap > div.photo_box ul li .bg_box.bg_box4 {
-  background: url(../img/trend4.jpg) no-repeat center/cover;
+  background: url(../img/news/pic4.jpg) no-repeat center/cover;
 }
 #news .inner .boxWrap > div.photo_box ul li .txt_box {
   opacity: 0;
@@ -449,7 +479,7 @@ body {
 #banner {
   width: 100%;
   padding: 180px 0;
-  background: url(../img/banner3.jpg) no-repeat center/cover fixed;
+  background: url(../img/banner/pic3.jpg) no-repeat center/cover fixed;
   position: relative;
 }
 #banner::before {

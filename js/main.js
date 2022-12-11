@@ -1,5 +1,5 @@
 // slider 관련 js--------------------------
-const slider = document.querySelector("#sliderMain");
+const slider = document.querySelector("#slider");
 const ul = slider.querySelector("ul");
 const lis = ul.querySelectorAll("li");
 const prev = document.querySelector(".prev");
@@ -12,7 +12,9 @@ const sp = pg.querySelector("span");
 const total = lis.length;
 sp.innerText = total;
 
-
+// strong --> css까지 완성하고 나서 다시 작성해보기
+// const str = pg.querySelector("strong");
+// str.innerText = 
 
 // slider
 let enableClick = true;
