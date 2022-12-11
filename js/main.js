@@ -1,4 +1,4 @@
-// slider 관련 js--------------------------
+// slider 관련 js
 const slider = document.querySelector("#slider");
 const ul = slider.querySelector("ul");
 const lis = ul.querySelectorAll("li");
@@ -6,15 +6,7 @@ const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 let len = lis.length;
 
-// span
-// const pg = document.querySelector(".pagination");
-// const sp = pg.querySelector("span");
-// const total = lis.length;
-// sp.innerText = total;
 
-// strong --> css까지 완성하고 나서 다시 작성해보기
-// const str = pg.querySelector("strong");
-// str.innerText = 
 
 // slider
 let enableClick = true;
@@ -70,7 +62,7 @@ function prevslide() {
   })
 }
 
-// tab menu 관련 js--------------------------
+// tab menu 관련 js
 const container = document.querySelector(".container");
 const btns = container.querySelectorAll("ul li");
 const boxes = container.querySelectorAll("section article");
@@ -105,3 +97,47 @@ function activation(list, index) {
   }
 
 }
+
+// scroll 관련 js
+const scrollView = document.querySelectorAll(".scrollView");
+const btnScroll = document.querySelectorAll(".scroll li");
+let posArr = [];
+console.log(posArr);
+
+const base = -300;
+
+
+for (let el of scrollView) {
+  posArr.push(el.offsetTop);
+}
+
+window.addEventListener("scroll", () => {
+  let scroll = window.scrollY || window.pageYOffset;
+
+  scrollView.forEach((el, index) => {
+    if (scroll >= posArr[index] + base) {
+      btnScroll.forEach((el, index) => {
+        el.classList.remove("on");
+        // scrollView[index].classList.remove("on");
+      })
+      btnScroll[index].classList.add('on');
+      scrollView[index].classList.add("on");
+    }
+  })
+
+})
+
+
+btnScroll.forEach((el, index) => {
+  el.addEventListener("click", () => {
+    new Anim(window, {
+      prop: "scroll",
+      value: posArr[index],
+      duration: speed,
+    });
+    for (let i of btnScroll) {
+      i.classList.remove("on");
+    }
+    el.classList.add("on");
+  })
+})

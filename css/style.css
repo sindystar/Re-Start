@@ -15,6 +15,7 @@ ol {
 
 a {
   text-decoration: none;
+  outline: none;
 }
 
 h1 {
@@ -24,6 +25,42 @@ h1 {
 
 body {
   overflow-x: hidden;
+}
+
+.scroll {
+  position: fixed;
+  right: 2vw;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+}
+.scroll li {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+}
+.scroll li a {
+  display: block;
+  width: 12px;
+  height: 12px;
+  line-height: 24px;
+  margin-left: 1vw;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.scroll li p {
+  font-size: 10px;
+  color: #0b0909;
+  opacity: 0;
+  transition: 1;
+}
+.scroll li.on a, .scroll li:hover.a {
+  transform: scale(1.2);
+}
+.scroll li:hover p {
+  opacity: 1;
 }
 
 #header {
@@ -160,7 +197,6 @@ body {
   position: absolute;
   left: 50px;
   bottom: 250px;
-  opacity: 0.5;
 }
 #visual .inner .wrap .next {
   width: 100%;
@@ -171,7 +207,6 @@ body {
   position: absolute;
   right: 50px;
   bottom: 250px;
-  opacity: 0.5;
   transition: 0.5s;
   z-index: 5;
 }
@@ -199,6 +234,7 @@ body {
   margin-left: 25%;
   font-size: 18px;
   font-weight: 400;
+  color: #fff;
 }
 
 #portfolio {
@@ -238,6 +274,8 @@ body {
 #portfolio .inner .container .tab ul {
   width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #portfolio .inner .container .tab ul li {
   width: 100%;
@@ -254,7 +292,13 @@ body {
   height: 40px;
   display: flex;
 }
+#portfolio .inner .container .tab ul li.on {
+  color: rgb(27, 113, 234);
+  font-weight: 700;
+  transition: 0.1s;
+}
 #portfolio .inner .container .tab ul li.on a {
+  position: absolute;
   color: rgb(27, 113, 234);
   font-weight: 700;
 }

@@ -5,20 +5,60 @@
 $tablet:1179px;
 $mobile:539px;
 
-@mixin btnStyle {
-	display: block;
-	width: 170px;
-	padding: 20px;
-	font: normal 12px/1 ;
-	color: #fff;
-	// border-radius: 5px;
-	background-color: #333;
-	text-align: center;
-	transition: 0.3s;
-	&:hover {
-		background-color: #eee;
-	}
+// @mixin btnStyle {
+// 	display: block;
+// 	width: 170px;
+// 	padding: 20px;
+// 	font: normal 12px/1 ;
+// 	color: #fff;
+// 	// border-radius: 5px;
+// 	background-color: #333;
+// 	text-align: center;
+// 	transition: 0.3s;
+// 	&:hover {
+// 		background-color: #eee;
+// 	}
+// }
+
+.scroll {
+    position: fixed;
+    right: 2vw;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    li {
+        display: flex;
+        justify-content: flex-end;
+        align-content: center;
+
+        a {
+            display: block;
+            width: 12px;
+            height: 12px;
+            line-height: 24px;
+            margin-left: 1vw;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        p {
+            font-size: 10px;
+            color: #0b0909;
+            opacity: 0;
+            transition: 1;
+        }
+        &.on a,
+        &:hover.a {
+            transform: scale(1.2);
+        }
+        &:hover p {
+            opacity: 1;
+        }
+    }
 }
+
+
 
     #header {
         // border: solid 1px blue;
@@ -160,12 +200,12 @@ $mobile:539px;
 							width: calc(100% / 5);
 							height: 100%;
 							float: left;
-							// float해제 안해줘도 되는지..???
+							
 							img {
 								width: 100%;
 								height: 100%;
 								object-fit: cover;
-								// filter: saturate(70%);
+								
 							}
 						}
 					}
@@ -178,7 +218,7 @@ $mobile:539px;
 						position: absolute;
 						left: 50px;
 						bottom: 250px;
-                        opacity: 0.5;
+                        // opacity: 0.5;
 					}
 				}
 				.next {
@@ -190,7 +230,7 @@ $mobile:539px;
 						position: absolute;
 						right: 50px;
 						bottom: 250px;
-                        opacity: 0.5;
+                        // opacity: 0.5;
                         transition: 0.5s;
                         z-index: 5;
                         
@@ -224,6 +264,7 @@ $mobile:539px;
 					margin-left: 25%;
 					font-size: 18px;
 					font-weight: 400;
+                    color: #fff;
 				}
 			}
 		}
@@ -418,8 +459,8 @@ $mobile:539px;
 					ul {
 						width: 100%;
 						display: flex;
-						// justify-content: center;
-                        // align-items: center;
+						justify-content: center;
+                        align-items: center;
 						li {
                             // border: solid 1px red;
 							width: 100%;
@@ -440,12 +481,19 @@ $mobile:539px;
 								// align-items: center;
 							}
 							&.on {
+                                color: rgb(27, 113, 234);
+                                font-weight: 700;
+                                transition: 0.1s;
 								a {
-									color: rgb(27, 113, 234);
+									// position: relative;
+                                    position: absolute;
+                                    color: rgb(27, 113, 234);
                                     font-weight: 700;
+                                    // text-decoration: underline;
                                     // background: #ddd;
                                     // border-radius: 5px;
                                     // font-weight: 900;
+                                    
                                     
 									
 								}
