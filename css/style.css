@@ -27,45 +27,9 @@ body {
   overflow-x: hidden;
 }
 
-.scroll {
-  position: fixed;
-  right: 2vw;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 20;
-}
-.scroll li {
-  display: flex;
-  justify-content: flex-end;
-  align-content: center;
-}
-.scroll li a {
-  display: block;
-  width: 12px;
-  height: 12px;
-  line-height: 24px;
-  margin-left: 1vw;
-  border-radius: 6px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  transition: 0.5s;
-}
-.scroll li p {
-  font-size: 10px;
-  color: #0b0909;
-  opacity: 0;
-  transition: 1;
-}
-.scroll li.on a, .scroll li:hover.a {
-  transform: scale(1.2);
-}
-.scroll li:hover p {
-  opacity: 1;
-}
-
 #header {
   width: 100%;
-  height: 100% px;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -107,6 +71,60 @@ body {
 }
 #header .inner #gnb li.on a {
   color: rgba(255, 255, 255, 0.7);
+}
+
+#about {
+  width: 100%;
+}
+#about .inner {
+  width: 1180px;
+  height: 600px;
+  margin: 0 auto;
+  padding-top: 50px;
+  overflow: hidden;
+  position: relative;
+}
+#about .inner::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#about .inner h1 {
+  margin-bottom: 20px;
+}
+#about .inner h2 {
+  font: bold 36px/1.4;
+  color: #333;
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+#about .inner h3 {
+  font: 24px/1.4;
+  color: #555;
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+#about .inner p {
+  font: 14px/1.2;
+  color: #777;
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+#about .inner a {
+  display: block;
+  position: relative;
+  margin-left: 10px;
+  width: 100px;
+  height: 30px;
+  font-weight: 600;
+  font: 14px/30px;
+  color: rgb(27, 113, 234);
+  text-align: center;
+}
+#about .inner a:hover {
+  cursor: pointer;
+  background: #fff;
+  color: #555;
 }
 
 #visual {
