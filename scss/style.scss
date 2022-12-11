@@ -23,7 +23,7 @@ $mobile:539px;
     #header {
         border: solid 1px blue;
         width: 100%;
-        height: 630px;
+        height: 100%px;
         position: absolute;
         top: 0;
         left: 0;
@@ -76,6 +76,133 @@ $mobile:539px;
         }
     }
 
+    	// visual 영역
+	#visual {
+		width: 1180px;
+		// inner에 1180하면 사진 위치가 달라져서 일단 figure에 1180 적용
+		height: 100%;
+		margin: 0 auto;
+		position: relative;
+		overflow: hidden;
+		.inner {
+			width: 100%;
+			margin: 0 auto;
+			.txt {
+                // border: solid 1px red;
+                position: absolute;
+				width: 100%;
+                // margin: 0 auto;
+                position: absolute;
+                // bottom: 50px;
+                // left: 50%;
+                // translate: translate(-50%, -50%);
+                margin-top: 220px;
+                // padding: 0 30px 30px 30px;
+                
+                z-index: 10;
+
+				// h1 {
+				// 	margin-bottom: 20px;
+				// 	font-weight: 500;
+				// 	font-size: 100px;
+				// }
+				p {
+					font-size: 100px;
+                    font-style: italic;
+                    font-weight: 700;
+					color: rgba(255, 255, 255, 0.8);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+				}
+                span {
+                    z-index: 10;
+                    font-size: 28px;
+                    font-weight: 500;
+                    color: rgba(255, 255, 255, 0.7);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+			}
+			.pic {
+				width: 470px;
+				height: 650px;
+				position: absolute;
+				bottom: 100px;
+				right: 0;
+				overflow: hidden;
+				> img {
+					width: 100%;
+					height: 650px;
+					object-fit: cover;
+					filter: saturate(70%);
+				}
+			}
+			.wrap {
+				width: 100%;
+				height: 630px;
+                border: 1px solid red;
+				// position: absolute;
+				// top: 0;
+				// left: 0;
+				#slider {
+					width: 1180px;
+					height: 630px;
+					position: absolute;
+					left: 0;
+					overflow: hidden;
+					ul {
+						width: calc(100% * 5);
+						height: 100%;
+						position: absolute;
+                        display: flex;
+						top: 0;
+						left: 0;
+						li {
+							width: calc(100% / 5);
+							height: 100%;
+							float: left;
+							// float해제 안해줘도 되는지..???
+							img {
+								width: 100%;
+								height: 100%;
+								object-fit: cover;
+								// filter: saturate(70%);
+							}
+						}
+					}
+				}
+				.prev {
+					width: 100%;
+					height: 100%;
+					img {
+						width: 100px;
+						position: absolute;
+						left: 150px;
+						bottom: 93px;
+					}
+				}
+				.next {
+					width: 100%;
+					height: 100%;
+					img {
+						width: 100px;
+						position: absolute;
+						left: 25%;
+						bottom: 93px;
+					}
+				}
+				.pagination {
+					position: absolute;
+					top: 400px;
+					margin-left: 25%;
+					font-size: 18px;
+					font-weight: 400;
+				}
+			}
+		}
+	}
 
     // #visual {
     //     width: 100%;
