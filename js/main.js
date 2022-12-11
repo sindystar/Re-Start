@@ -7,10 +7,10 @@ const next = document.querySelector(".next");
 let len = lis.length;
 
 // span
-const pg = document.querySelector(".pagination");
-const sp = pg.querySelector("span");
-const total = lis.length;
-sp.innerText = total;
+// const pg = document.querySelector(".pagination");
+// const sp = pg.querySelector("span");
+// const total = lis.length;
+// sp.innerText = total;
 
 // strong --> css까지 완성하고 나서 다시 작성해보기
 // const str = pg.querySelector("strong");

@@ -99,7 +99,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-#visual .inner .txt span {
+#visual .inner .txt h2 {
   z-index: 10;
   font-size: 28px;
   font-weight: 500;
