@@ -5,20 +5,20 @@
 $tablet:1179px;
 $mobile:539px;
 
-// @mixin btnStyle {
-// 	display: block;
-// 	width: 170px;
-// 	padding: 20px;
-// 	font: normal 12px/1 ;
-// 	color: #fff;
-// 	// border-radius: 5px;
-// 	background-color: #333;
-// 	text-align: center;
-// 	transition: 0.3s;
-// 	&:hover {
-// 		background-color: #eee;
-// 	}
-// }
+@mixin btnStyle {
+	display: block;
+	width: 170px;
+	padding: 20px;
+	font: normal 12px/1 ;
+	color: #fff;
+	// border-radius: 5px;
+	background-color: #333;
+	text-align: center;
+	transition: 0.3s;
+	&:hover {
+		background-color: #eee;
+	}
+}
 
 // .scroll {
 //     position: fixed;
