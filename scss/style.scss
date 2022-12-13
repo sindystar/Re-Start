@@ -5,6 +5,24 @@
 $tablet:1179px;
 $mobile:539px;
 
+.hidden {
+	position: absolute;
+	top: -99999999px;
+	opacity: 0;
+}
+fieldset {
+	border: none;
+}
+table {
+	border-collapse: collapse;
+}
+
+.wrap::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
 @mixin btnStyle {
 	display: block;
 	width: 170px;
@@ -30,7 +48,7 @@ $mobile:539px;
         left: 0;
         z-index: 10;
         .inner {
-            border: solid 1px rgb(56, 40, 40);
+            // border: solid 1px rgb(56, 40, 40);
             width: 1180px;
             height: 100px;
             margin: 0 auto;
@@ -47,7 +65,7 @@ $mobile:539px;
                     z-index: 10;
                 }
             }
-            #gnb {
+        .menuWeb #gnb {
                 display: flex;
                 margin-right: 50px;
                 li {
@@ -86,8 +104,111 @@ $mobile:539px;
                 }
             }
         }
+        .btnCall {
+            border: solid 1px red;
+			position: absolute;
+			right: 30px;
+			top: 50%;
+			transform: translateY(-50%);
+			display: none;
+			width: 20px;
+			height: 20px;
+			&::before {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 2px;
+				background: #fff;
+				position: absolute;
+				top: 0;
+				left: 0;
+				transition: top 0.5s 0s, transform 0.5s 0.5s;
+			}
+			&::after {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 2px;
+				background: #fff;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				transition: bottom 0.5s 0s, transform 0.5s 0.5s;
+			}
+			span {
+				display: block;
+				width: 100%;
+				height: 2px;
+				background: #fff;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				margin-top: -1px;
+				transition: 1s;
+				text-indent: -9999px;
+			}
+			&.on {
+				&::before {
+					top: 50%;
+					margin-top: -1px;
+					transform: rotate(45deg);
+				}
+				&::after {
+					bottom: 50%;
+					margin-bottom: -1px;
+					transform: rotate(-45deg);
+				}
+				span {
+					transform: translateX(100%);
+					opacity: 0;
+				}
+			}
+		}
+		.menuMo {
+            border: solid 1px blue;
+			width: 270px;
+			height: 100vh;
+			background: #333;
+			position: fixed;
+			top: 0;
+			left: -270px;
+			padding: 35px 30px;
+			z-index: 10;
+			transition: 0.5s;
+			&.on {
+				left: 0;
+			}
+			h1 {
+				padding-bottom: 30px;
+				border-bottom: 1px solid #666;
+				a {
+					display: block;
+					font: bold 24px/1 'arial';
+					color: #fff;
+					text-align: center;
+				}
+				span {
+					font-size: 12px;
+					color: #aaa;
+				}
+			}
+			#gnbMo {
+				li {
+					a {
+						display: block;
+						width: 100%;
+						padding: 20px 0;
+						border-bottom: 1px solid #444;
+						font: bold 14px/1 'arial';
+						color: #888;
+						text-align: center;
+					}
+				}
+			}
+		}
     }
     #visual {
+        border: 1px solid blue;
 		width: 1180px;
 		height: 100%;
 		margin: 0 auto;
@@ -97,36 +218,34 @@ $mobile:539px;
 			width: 100%;
 			margin: 0 auto;
 			.txt {
-                // border: solid 1px red;
-                position: absolute;
+                border : solid 1px red;            
 				width: 100%;
-                // margin: 0 auto;
+                height: 300px;
+                margin-top: 150px;
                 position: absolute;
-                margin-top: 250px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 z-index: 10;
-
-				// h1 {
-				// 	margin-bottom: 20px;
-				// 	font-weight: 500;
-				// 	font-size: 100px;
-				// }
 				p {
+                    margin: 0 auto;
 					font-size: 100px;
                     font-style: italic;
                     font-weight: 700;
 					color: rgba(255, 255, 255, 0.8);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    position: absolute;
+                    // display: flex;
+                    // justify-content: center;
+                    // align-items: center;
 				}
                 h2 {
                     z-index: 10;
                     font-size: 28px;
                     font-weight: 500;
                     color: rgba(255, 255, 255, 0.7);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    margin-top:150px ;                    // display: flex;
+                    // justify-content: center;
+                    // align-items: center;
                 }
 			}
 			.pic {
@@ -239,7 +358,7 @@ $mobile:539px;
     #about {
         width: 100%;
     .inner {
-            // border: 1px solid blue;
+            border: 1px solid blue;
 			width: 1180px;
             height: 500px;
 			margin: 0 auto;
@@ -252,43 +371,48 @@ $mobile:539px;
 				clear: both;
 			}
             h1 {
-                // font: normal 120px/1'
+                border: 1px solid black;
                 margin-bottom: 20px;
                 // left :20px;
             }
-            h2 {
+            >h2 {
                 font: bold 36px/1.4 ;
                 color: #333;
                 margin-bottom: 5px;
                 padding-left: 10px;
             }
-            h3 {
+            >h3 {
                 font: 24px/1.4 ;
                 color: #555;
                 margin-bottom: 5px;
                 padding-left: 10px;
             }
-            p{
+            >p{
                 font: 14px/1.2 ;
                 color: #777;
                 margin-bottom: 5px;
                 padding-left: 10px;  
             }
-            a {
+            >a {
+                // border: 1px solid red;
                 display: block;
-                position: relative;
+                // position: relative;
                 margin-left: 10px;
+                margin-top: 100px;
+            
                 width: 100px;
-                height: 30px;
+                height: 24px;
                 // border: 1px solid #bbb;
                 font-weight: 600;
-                font:  14px/30px ;
+                font:  14px/50px ;
                 color: rgb(27, 113, 234);
                 text-align: center;
                 &:hover {
-                    cursor: pointer;
-                    background: #fff;
-                    color: #555;
+                    border-radius: 3px;
+                    border: 1px solid rgb(27, 113, 234);
+                    // background: rgb(27, 113, 234);
+                    // color: #fff;
+                    color : rgb(27, 113, 234);
                 }
             }
         }
@@ -1066,26 +1190,31 @@ $mobile:539px;
 // 반응형 사이즈 확인후 작업 할것 
 
 // tablet - 1179px--------------------
-@media screen and (max-width: 1179px) {
+@media screen and (max-width: $tablet) {
 	body {
 		// header 영역
 		#header {
 			.inner {
 				width: 100%;
-				height: 600px;
+				height: 100px;
 				padding: 0vh 0vw;
+                position: absolute;
+                position: relative;
 				> h1 {
                     // display: none;
-                    position: absolute;
-                    position: relative;
-                    margin-left: 50px;
+                    // position: absolute;
+                    // position: relative;
+                    // margin-left: 50px;
 				}
 				.menuWeb {
-					display: none;
-				}
-				.btnCall {
-					display: block;
-				}
+                    display: none;
+                }
+                .btnCall {
+                    display: block;
+                }
+                .menuMo {
+                    display: block;
+                }
 			}
 		}
 
@@ -1101,19 +1230,19 @@ $mobile:539px;
             
 		}
 			.inner {
-                // background: url(../img/slider/pic900.jpg) no-repeat center/cover;
-                // article {
-                //     display: none;
-                // }
+                
 				.btnOpen {
 					margin-left: -12vw;
-					// margin-top: -343px;
+					margin-top: 50px;
 				}
 				.txt {
-					// width: 25%;
+					width: 25%;
 					position: absolute;
 					h1 {
 						// margin-left: 50px;
+                        position: absolute;
+                        position: relative;
+                        
 					}
 					p {
 					
@@ -1154,12 +1283,14 @@ $mobile:539px;
 						bottom: 0;
 						margin-bottom: 10vh;
 						margin-left: 30vw;
+                        display: none;
 					}
 				}
 				.next {
 					img {
 						margin-bottom: 7vh;
 						margin-left: 18vw;
+                        display: none;
 					}
 				}
 				.pagination {
@@ -1169,12 +1300,21 @@ $mobile:539px;
 		}
         		// about 영역
 		#about {
+            border: 1px solid rgb(255, 0, 149);
+            width: 100%;
+            height: 400px;
+            // padding:  50px ;
+
 			.inner {
 				width: 100%;
-                height: 600px;
-				// padding: 5vw 5vw 5vw;
+                height: 400px;
+                margin: 0 auto;
+                position: absolute;
+				margin-left: 50px;
 				.txt {
+                    width: 100%;
 					// display: flex;
+                    // justify-content: center;
 					// flex-direction: column;
 					h2 {
 						width: 100%;

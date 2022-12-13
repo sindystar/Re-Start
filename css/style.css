@@ -27,6 +27,26 @@ body {
   overflow-x: hidden;
 }
 
+.hidden {
+  position: absolute;
+  top: -99999999px;
+  opacity: 0;
+}
+
+fieldset {
+  border: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.wrap::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 #header {
   width: 100%;
   height: 100%;
@@ -36,7 +56,6 @@ body {
   z-index: 10;
 }
 #header .inner {
-  border: solid 1px rgb(56, 40, 40);
   width: 1180px;
   height: 100px;
   margin: 0 auto;
@@ -52,11 +71,11 @@ body {
   margin-left: 50px;
   z-index: 10;
 }
-#header .inner #gnb {
+#header .inner .menuWeb #gnb {
   display: flex;
   margin-right: 50px;
 }
-#header .inner #gnb li a {
+#header .inner .menuWeb #gnb li a {
   display: block;
   border: 1px solid red;
   padding: 10px 10px;
@@ -69,18 +88,115 @@ body {
   align-items: center;
   transition: 0.4s;
 }
-#header .inner #gnb li:hover a {
+#header .inner .menuWeb #gnb li:hover a {
   color: #333;
   transition: 0.5s;
 }
-#header .inner #gnb li.on:hover a {
+#header .inner .menuWeb #gnb li.on:hover a {
   color: #333;
 }
-#header .inner #gnb li.on a {
+#header .inner .menuWeb #gnb li.on a {
   color: rgba(255, 255, 255, 0.7);
+}
+#header .btnCall {
+  border: solid 1px red;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  width: 20px;
+  height: 20px;
+}
+#header .btnCall::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: top 0.5s 0s, transform 0.5s 0.5s;
+}
+#header .btnCall::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: bottom 0.5s 0s, transform 0.5s 0.5s;
+}
+#header .btnCall span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -1px;
+  transition: 1s;
+  text-indent: -9999px;
+}
+#header .btnCall.on::before {
+  top: 50%;
+  margin-top: -1px;
+  transform: rotate(45deg);
+}
+#header .btnCall.on::after {
+  bottom: 50%;
+  margin-bottom: -1px;
+  transform: rotate(-45deg);
+}
+#header .btnCall.on span {
+  transform: translateX(100%);
+  opacity: 0;
+}
+#header .menuMo {
+  border: solid 1px blue;
+  width: 270px;
+  height: 100vh;
+  background: #333;
+  position: fixed;
+  top: 0;
+  left: -270px;
+  padding: 35px 30px;
+  z-index: 10;
+  transition: 0.5s;
+}
+#header .menuMo.on {
+  left: 0;
+}
+#header .menuMo h1 {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #666;
+}
+#header .menuMo h1 a {
+  display: block;
+  font: bold 24px/1 "arial";
+  color: #fff;
+  text-align: center;
+}
+#header .menuMo h1 span {
+  font-size: 12px;
+  color: #aaa;
+}
+#header .menuMo #gnbMo li a {
+  display: block;
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: 1px solid #444;
+  font: bold 14px/1 "arial";
+  color: #888;
+  text-align: center;
 }
 
 #visual {
+  border: 1px solid blue;
   width: 1180px;
   height: 100%;
   margin: 0 auto;
@@ -92,29 +208,30 @@ body {
   margin: 0 auto;
 }
 #visual .inner .txt {
-  position: absolute;
+  border: solid 1px red;
   width: 100%;
+  height: 300px;
+  margin-top: 150px;
   position: absolute;
-  margin-top: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 10;
 }
 #visual .inner .txt p {
+  margin: 0 auto;
   font-size: 100px;
   font-style: italic;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
 }
 #visual .inner .txt h2 {
   z-index: 10;
   font-size: 28px;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-top: 150px;
 }
 #visual .inner .pic {
   width: 470px;
@@ -212,6 +329,7 @@ body {
   width: 100%;
 }
 #about .inner {
+  border: 1px solid blue;
   width: 1180px;
   height: 500px;
   margin: 0 auto;
@@ -225,41 +343,42 @@ body {
   clear: both;
 }
 #about .inner h1 {
+  border: 1px solid black;
   margin-bottom: 20px;
 }
-#about .inner h2 {
+#about .inner > h2 {
   font: bold 36px/1.4;
   color: #333;
   margin-bottom: 5px;
   padding-left: 10px;
 }
-#about .inner h3 {
+#about .inner > h3 {
   font: 24px/1.4;
   color: #555;
   margin-bottom: 5px;
   padding-left: 10px;
 }
-#about .inner p {
+#about .inner > p {
   font: 14px/1.2;
   color: #777;
   margin-bottom: 5px;
   padding-left: 10px;
 }
-#about .inner a {
+#about .inner > a {
   display: block;
-  position: relative;
   margin-left: 10px;
+  margin-top: 100px;
   width: 100px;
-  height: 30px;
+  height: 24px;
   font-weight: 600;
-  font: 14px/30px;
+  font: 14px/50px;
   color: rgb(27, 113, 234);
   text-align: center;
 }
-#about .inner a:hover {
-  cursor: pointer;
-  background: #fff;
-  color: #555;
+#about .inner > a:hover {
+  border-radius: 3px;
+  border: 1px solid rgb(27, 113, 234);
+  color: rgb(27, 113, 234);
 }
 
 #box {
@@ -817,13 +936,10 @@ body {
 @media screen and (max-width: 1179px) {
   body #header .inner {
     width: 100%;
-    height: 600px;
+    height: 100px;
     padding: 0vh 0vw;
-  }
-  body #header .inner > h1 {
     position: absolute;
     position: relative;
-    margin-left: 50px;
   }
   body #header .inner .menuWeb {
     display: none;
@@ -831,14 +947,23 @@ body {
   body #header .inner .btnCall {
     display: block;
   }
+  body #header .inner .menuMo {
+    display: block;
+  }
   body #visual {
     height: 600px;
   }
   body .inner .btnOpen {
     margin-left: -12vw;
+    margin-top: 50px;
   }
   body .inner .txt {
+    width: 25%;
     position: absolute;
+  }
+  body .inner .txt h1 {
+    position: absolute;
+    position: relative;
   }
   body .inner .txt p {
     justify-content: center;
@@ -866,17 +991,30 @@ body {
     bottom: 0;
     margin-bottom: 10vh;
     margin-left: 30vw;
+    display: none;
   }
   body .wrap .next img {
     margin-bottom: 7vh;
     margin-left: 18vw;
+    display: none;
   }
   body .wrap .pagination {
     display: none;
   }
+  #about {
+    border: 1px solid rgb(255, 0, 149);
+    width: 100%;
+    height: 400px;
+  }
   #about .inner {
     width: 100%;
-    height: 600px;
+    height: 400px;
+    margin: 0 auto;
+    position: absolute;
+    margin-left: 50px;
+  }
+  #about .inner .txt {
+    width: 100%;
   }
   #about .inner .txt h2 {
     width: 100%;
