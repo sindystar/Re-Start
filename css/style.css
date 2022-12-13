@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap");
 * {
   margin: 0px;
@@ -74,8 +73,139 @@ body {
   color: #333;
   transition: 0.5s;
 }
+#header .inner #gnb li.on:hover a {
+  color: #333;
+}
 #header .inner #gnb li.on a {
   color: rgba(255, 255, 255, 0.7);
+}
+
+#visual {
+  width: 1180px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+#visual .inner {
+  width: 100%;
+  margin: 0 auto;
+}
+#visual .inner .txt {
+  position: absolute;
+  width: 100%;
+  position: absolute;
+  margin-top: 250px;
+  z-index: 10;
+}
+#visual .inner .txt p {
+  font-size: 100px;
+  font-style: italic;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#visual .inner .txt h2 {
+  z-index: 10;
+  font-size: 28px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#visual .inner .pic {
+  width: 470px;
+  height: 600px;
+  position: absolute;
+  bottom: 100px;
+  right: 0;
+  overflow: hidden;
+}
+#visual .inner .pic > img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  filter: saturate(70%);
+}
+#visual .inner .wrap {
+  width: 100%;
+  height: 600px;
+}
+#visual .inner .wrap #slider {
+  width: 1180px;
+  height: 600px;
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+}
+#visual .inner .wrap #slider ul {
+  width: 500%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+}
+#visual .inner .wrap #slider ul li {
+  width: 20%;
+  height: 100%;
+  float: left;
+}
+#visual .inner .wrap #slider ul li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#visual .inner .wrap .prev {
+  width: 100%;
+  height: 100%;
+}
+#visual .inner .wrap .prev img {
+  width: 100px;
+  position: absolute;
+  left: 50px;
+  bottom: 250px;
+}
+#visual .inner .wrap .next {
+  width: 100%;
+  height: 100%;
+}
+#visual .inner .wrap .next img {
+  width: 100px;
+  position: absolute;
+  right: 50px;
+  bottom: 250px;
+  transition: 0.5s;
+  z-index: 5;
+}
+#visual .inner .wrap .next::after {
+  content: "";
+  display: block;
+  clear: both;
+  width: 0px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -250px;
+  left: 0;
+  transition: 0.5s;
+  z-index: 3;
+}
+#visual .inner .wrap .next:hover img {
+  cursor: pointer;
+  transition: 0.5s;
+  transform: scale(1.2);
+}
+#visual .inner .wrap .pagination {
+  position: absolute;
+  top: 400px;
+  margin-left: 25%;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
 }
 
 #about {
@@ -276,134 +406,6 @@ body {
 }
 #box .inner .boxWrap > div.photo_box ul li .txt_box .bottom_txt a i {
   margin-right: 5px;
-}
-
-#visual {
-  width: 1180px;
-  height: 100%;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-}
-#visual .inner {
-  width: 100%;
-  margin: 0 auto;
-}
-#visual .inner .txt {
-  position: absolute;
-  width: 100%;
-  position: absolute;
-  margin-top: 250px;
-  z-index: 10;
-}
-#visual .inner .txt p {
-  font-size: 100px;
-  font-style: italic;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#visual .inner .txt h2 {
-  z-index: 10;
-  font-size: 28px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#visual .inner .pic {
-  width: 470px;
-  height: 600px;
-  position: absolute;
-  bottom: 100px;
-  right: 0;
-  overflow: hidden;
-}
-#visual .inner .pic > img {
-  width: 100%;
-  height: 600px;
-  object-fit: cover;
-  filter: saturate(70%);
-}
-#visual .inner .wrap {
-  width: 100%;
-  height: 600px;
-}
-#visual .inner .wrap #slider {
-  width: 1180px;
-  height: 600px;
-  position: absolute;
-  left: 0;
-  overflow: hidden;
-}
-#visual .inner .wrap #slider ul {
-  width: 500%;
-  height: 100%;
-  position: absolute;
-  display: flex;
-  top: 0;
-  left: 0;
-}
-#visual .inner .wrap #slider ul li {
-  width: 20%;
-  height: 100%;
-  float: left;
-}
-#visual .inner .wrap #slider ul li img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-#visual .inner .wrap .prev {
-  width: 100%;
-  height: 100%;
-}
-#visual .inner .wrap .prev img {
-  width: 100px;
-  position: absolute;
-  left: 50px;
-  bottom: 250px;
-}
-#visual .inner .wrap .next {
-  width: 100%;
-  height: 100%;
-}
-#visual .inner .wrap .next img {
-  width: 100px;
-  position: absolute;
-  right: 50px;
-  bottom: 250px;
-  transition: 0.5s;
-  z-index: 5;
-}
-#visual .inner .wrap .next::after {
-  content: "";
-  display: block;
-  clear: both;
-  width: 0px;
-  height: 2px;
-  background-color: #fff;
-  position: absolute;
-  bottom: -250px;
-  left: 0;
-  transition: 0.5s;
-  z-index: 3;
-}
-#visual .inner .wrap .next:hover img {
-  cursor: pointer;
-  transition: 0.5s;
-  transform: scale(1.2);
-}
-#visual .inner .wrap .pagination {
-  position: absolute;
-  top: 400px;
-  margin-left: 25%;
-  font-size: 18px;
-  font-weight: 400;
-  color: #fff;
 }
 
 #portfolio {
@@ -831,17 +833,11 @@ body {
   }
   body #visual {
     height: 600px;
-    background: url(../img/slider/pic900.jpg) no-repeat center/cover;
-    margin-right: 300px;
-  }
-  body #visual article {
-    display: none;
   }
   body .inner .btnOpen {
     margin-left: -12vw;
   }
   body .inner .txt {
-    width: 25%;
     position: absolute;
   }
   body .inner .txt p {
@@ -858,8 +854,12 @@ body {
     width: 100%;
     height: 100%;
   }
-  body .wrap #slider {
-    margin: 5vh 8vw;
+  body .wrap {
+    background: url(../img/slider/pic900.jpg) no-repeat center/cover;
+    margin: 0 auto;
+  }
+  body .wrap #slider ul li img {
+    display: none;
   }
   body .wrap .prev img {
     left: 0;
@@ -877,11 +877,6 @@ body {
   #about .inner {
     width: 100%;
     height: 600px;
-    padding: 5vw 5vw 5vw;
-  }
-  #about .inner .txt {
-    display: flex;
-    flex-direction: column;
   }
   #about .inner .txt h2 {
     width: 100%;
@@ -928,22 +923,13 @@ body {
 @media screen and (max-width: 935px) {
   body #visual {
     height: 600px;
-    background: url(../img/slider/pic540.jpg) no-repeat center/cover;
-    margin-right: 300px;
-  }
-  body #visual article {
-    display: none;
   }
   body #visual .inner .btnOpen {
     margin-left: -18vw;
     margin-top: -300px;
   }
-  body #visual .inner .txt h1 {
-    margin-left: -18vw;
-  }
   body #visual .inner .txt p {
     margin-top: -200px;
-    margin-left: -18vw;
   }
   body #visual .inner .pic {
     height: 600px;
@@ -952,7 +938,8 @@ body {
     margin-right: 5vw;
   }
   body #visual .wrap {
-    display: none;
+    background: url(../img/slider/pic540.jpg) no-repeat center/cover;
+    margin: 0 auto;
   }
   body #about .inner .txt p {
     width: 100%;
@@ -990,26 +977,6 @@ body {
   body #portfolio .inner .container section article div:last-of-type {
     display: none;
   }
-  body #aside .inner {
-    justify-content: space-around;
-    align-content: center;
-  }
-  body #aside .inner .pic {
-    width: 65%;
-  }
-  body #aside .inner .content {
-    width: 80%;
-  }
-  body #aside .inner .content h2 {
-    font-size: 4vw;
-  }
-  body #aside .inner .content p {
-    font-size: 14px;
-    line-height: 1.2;
-  }
-  body #aside .inner .content .btnClose {
-    margin-top: -10px;
-  }
 }
 @media screen and (max-width: 539px) {
   body #header .inner {
@@ -1035,82 +1002,31 @@ body {
     margin-right: 0vw;
   }
   body #visual .wrap {
-    display: none;
+    background: url(../img/slider/pic500.jpg) no-repeat center/cover;
+    margin: 0 auto;
   }
-  body about 영역 #portfolio .inner .container .tab {
+  body #portfolio .inner .container .tab {
     width: 100%;
     float: left;
   }
-  body about 영역 #portfolio .inner .container .tab ul li {
+  body #portfolio .inner .container .tab ul li {
     margin-left: 2vw;
   }
-  body about 영역 #portfolio .inner .container .tab ul li a {
+  body #portfolio .inner .container .tab ul li a {
     font-size: 11px;
   }
-  body about 영역 #portfolio .inner .container section {
+  body #portfolio .inner .container section {
     height: 250px;
   }
-  body about 영역 #portfolio .inner .container section article div {
+  body #portfolio .inner .container section article div {
     width: 100%;
   }
-  body about 영역 #portfolio .inner .container section article div:first-of-type {
+  body #portfolio .inner .container section article div:first-of-type {
     display: none;
-  }
-  body #awards .inner .container {
-    width: 90%;
-  }
-  body #awards .inner .container .tab {
-    padding: 10px 0px 10px;
-  }
-  body #awards .inner .container .tab input[type=radio]:checked ~ label h2 {
-    display: none;
-  }
-  body #awards .inner .container .tab label h2 {
-    font-size: 16px;
-  }
-  body #awards .inner .container .tab label h3 {
-    font-size: 14px;
-  }
-  body #awards .inner .container .tab .content {
-    flex-direction: column;
-  }
-  body #awards .inner .container .tab .content img {
-    width: 150px;
-    height: 100px;
-  }
-  body #awards .inner .container .tab .content p {
-    width: 100%;
-    height: 100%;
-    padding: 2px 0;
   }
   body #contact .inner .wrap {
     width: 100%;
     margin: 50px 0vw 60px 0vw;
-  }
-  body #aside {
-    top: 12%;
-  }
-  body #aside .inner {
-    padding: 2vw;
-    align-content: center;
-  }
-  body #aside .inner .pic {
-    width: 70%;
-    margin-top: 2vh;
-  }
-  body #aside .inner .content h2 {
-    font-size: 20px;
-    color: #0b0909;
-    margin-bottom: 20px;
-  }
-  body #aside .inner .content p {
-    font-size: 12px;
-    line-height: 1.2;
-    color: #0b0909;
-  }
-  body #aside .inner .content .btnClose {
-    margin-top: -22px;
-    margin-right: -20px;
   }
 }
 

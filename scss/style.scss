@@ -73,16 +73,169 @@ $mobile:539px;
                         }
                     }
                     &.on {
-                        a {
-                            color: rgba(255, 255, 255, 0.7);
-                            
+                        &:hover {
+                            a {
+                                color:#333;
+                            }
                         }
+                        a {
+                            color: rgba(255, 255, 255, 0.7); 
+                        }
+                        
                     }
                 }
             }
         }
     }
+    #visual {
+		width: 1180px;
+		height: 100%;
+		margin: 0 auto;
+		position: relative;
+		overflow: hidden;
+		.inner {
+			width: 100%;
+			margin: 0 auto;
+			.txt {
+                // border: solid 1px red;
+                position: absolute;
+				width: 100%;
+                // margin: 0 auto;
+                position: absolute;
+                margin-top: 250px;
+                z-index: 10;
 
+				// h1 {
+				// 	margin-bottom: 20px;
+				// 	font-weight: 500;
+				// 	font-size: 100px;
+				// }
+				p {
+					font-size: 100px;
+                    font-style: italic;
+                    font-weight: 700;
+					color: rgba(255, 255, 255, 0.8);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+				}
+                h2 {
+                    z-index: 10;
+                    font-size: 28px;
+                    font-weight: 500;
+                    color: rgba(255, 255, 255, 0.7);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+			}
+			.pic {
+				width: 470px;
+				height: 600px;
+				position: absolute;
+				bottom: 100px;
+				right: 0;
+				overflow: hidden;
+				> img {
+					width: 100%;
+					height: 600px;
+					object-fit: cover;
+					filter: saturate(70%);
+				}
+			}
+			.wrap {
+				width: 100%;
+				height: 600px;
+                // border: 1px solid red;
+				// position: absolute;
+				// top: 0;
+				// left: 0;
+				#slider {
+					width: 1180px;
+					height: 600px;
+					position: absolute;
+					left: 0;
+					overflow: hidden;
+					ul {
+						width: calc(100% * 5);
+						height: 100%;
+						position: absolute;
+                        display: flex;
+						top: 0;
+						left: 0;
+						li {
+							width: calc(100% / 5);
+							height: 100%;
+							float: left;
+							
+							img {
+								width: 100%;
+								height: 100%;
+								object-fit: cover;
+								
+							}
+						}
+					}
+				}
+				.prev {
+					width: 100%;
+					height: 100%;
+					img {
+						width: 100px;
+						position: absolute;
+						left: 50px;
+						bottom: 250px;
+                        // opacity: 0.5;
+					}
+				}
+				.next {
+					width: 100%;
+					height: 100%;
+                    
+					img {
+						width: 100px;
+						position: absolute;
+						right: 50px;
+						bottom: 250px;
+                        // opacity: 0.5;
+                        transition: 0.5s;
+                        z-index: 5;
+                        
+					}
+                    &::after {
+                        content: "";
+                        display: block;
+                        clear: both;
+                        width: 0px;
+                        height: 2px;
+                        background-color: #fff;
+                        position: absolute;
+                        bottom: -250px;
+                        left: 0;
+                        transition: 0.5s;
+                        z-index: 3;
+                    }
+                    &:hover {
+                        img {
+                            cursor: pointer;
+                            transition: 0.5s;
+                            transform: scale(1.2);
+                        }
+                    
+                    }
+                    
+				}
+				.pagination {
+					position: absolute;
+					top: 400px;
+					margin-left: 25%;
+					font-size: 18px;
+					font-weight: 400;
+                    color: #fff;
+				}
+			}
+		}
+	}
     #about {
         width: 100%;
     .inner {
@@ -316,156 +469,6 @@ $mobile:539px;
         }
     }
     }
-
-	#visual {
-		width: 1180px;
-		height: 100%;
-		margin: 0 auto;
-		position: relative;
-		overflow: hidden;
-		.inner {
-			width: 100%;
-			margin: 0 auto;
-			.txt {
-                // border: solid 1px red;
-                position: absolute;
-				width: 100%;
-                // margin: 0 auto;
-                position: absolute;
-                margin-top: 250px;
-                z-index: 10;
-
-				// h1 {
-				// 	margin-bottom: 20px;
-				// 	font-weight: 500;
-				// 	font-size: 100px;
-				// }
-				p {
-					font-size: 100px;
-                    font-style: italic;
-                    font-weight: 700;
-					color: rgba(255, 255, 255, 0.8);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-				}
-                h2 {
-                    z-index: 10;
-                    font-size: 28px;
-                    font-weight: 500;
-                    color: rgba(255, 255, 255, 0.7);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-			}
-			.pic {
-				width: 470px;
-				height: 600px;
-				position: absolute;
-				bottom: 100px;
-				right: 0;
-				overflow: hidden;
-				> img {
-					width: 100%;
-					height: 600px;
-					object-fit: cover;
-					filter: saturate(70%);
-				}
-			}
-			.wrap {
-				width: 100%;
-				height: 600px;
-                // border: 1px solid red;
-				// position: absolute;
-				// top: 0;
-				// left: 0;
-				#slider {
-					width: 1180px;
-					height: 600px;
-					position: absolute;
-					left: 0;
-					overflow: hidden;
-					ul {
-						width: calc(100% * 5);
-						height: 100%;
-						position: absolute;
-                        display: flex;
-						top: 0;
-						left: 0;
-						li {
-							width: calc(100% / 5);
-							height: 100%;
-							float: left;
-							
-							img {
-								width: 100%;
-								height: 100%;
-								object-fit: cover;
-								
-							}
-						}
-					}
-				}
-				.prev {
-					width: 100%;
-					height: 100%;
-					img {
-						width: 100px;
-						position: absolute;
-						left: 50px;
-						bottom: 250px;
-                        // opacity: 0.5;
-					}
-				}
-				.next {
-					width: 100%;
-					height: 100%;
-                    
-					img {
-						width: 100px;
-						position: absolute;
-						right: 50px;
-						bottom: 250px;
-                        // opacity: 0.5;
-                        transition: 0.5s;
-                        z-index: 5;
-                        
-					}
-                    &::after {
-                        content: "";
-                        display: block;
-                        clear: both;
-                        width: 0px;
-                        height: 2px;
-                        background-color: #fff;
-                        position: absolute;
-                        bottom: -250px;
-                        left: 0;
-                        transition: 0.5s;
-                        z-index: 3;
-                    }
-                    &:hover {
-                        img {
-                            cursor: pointer;
-                            transition: 0.5s;
-                            transform: scale(1.2);
-                        }
-                    
-                    }
-                    
-				}
-				.pagination {
-					position: absolute;
-					top: 400px;
-					margin-left: 25%;
-					font-size: 18px;
-					font-weight: 400;
-                    color: #fff;
-				}
-			}
-		}
-	}
                     
 	#portfolio {
 		width: 100%;
@@ -1086,28 +1089,31 @@ $mobile:539px;
 			}
 		}
 
-		// visual 영역
+        		// visual 영역
 		#visual {
 			height: 600px;
-            background: url(../img/slider/pic900.jpg) no-repeat center/cover;
-            margin-right: 300px;
+            // margin-right: 300px;
             // width: 90%; height: 700px; background;
             // border-radius: 20px;
-            article {
-                display: none;
-            }
+            // article {
+            //     display: none;
+            // }
             
 		}
 			.inner {
+                // background: url(../img/slider/pic900.jpg) no-repeat center/cover;
+                // article {
+                //     display: none;
+                // }
 				.btnOpen {
 					margin-left: -12vw;
 					// margin-top: -343px;
 				}
 				.txt {
-					width: 25%;
+					// width: 25%;
 					position: absolute;
 					h1 {
-						
+						// margin-left: 50px;
 					}
 					p {
 					
@@ -1128,9 +1134,19 @@ $mobile:539px;
 				}
 			}
 			.wrap {
-				// position: relative;
+				background: url(../img/slider/pic900.jpg) no-repeat center/cover;
+                margin: 0 auto;
+                // article {
+                //     display: none;
+                // }
 				#slider {
-					margin: 5vh 8vw;
+					ul {
+                        li {
+                            img {
+                                display: none;
+                            }
+                        }
+                    }
 				}
 				.prev {
 					img {
@@ -1151,16 +1167,15 @@ $mobile:539px;
 				}
 			}
 		}
-
-		// about 영역
+        		// about 영역
 		#about {
 			.inner {
 				width: 100%;
                 height: 600px;
-				padding: 5vw 5vw 5vw;
+				// padding: 5vw 5vw 5vw;
 				.txt {
-					display: flex;
-					flex-direction: column;
+					// display: flex;
+					// flex-direction: column;
 					h2 {
 						width: 100%;
 						// margin-bottom: 15px;
@@ -1180,7 +1195,6 @@ $mobile:539px;
 				padding: 3vw 5vw 5vw;
 			}
 		}
-
 		// awards 영역
 		#awards {
 			.inner {
@@ -1240,6 +1254,7 @@ $mobile:539px;
 @media screen and (max-width: 935px) {  
 	body {
 		// header 영역
+        
 		// #header {
 		// 	.inner {
 
@@ -1249,13 +1264,13 @@ $mobile:539px;
 		// visual 영역
 		#visual {
 			height: 600px;
-            background: url(../img/slider/pic540.jpg) no-repeat center/cover;
-            margin-right: 300px;
+            // background: url(../img/slider/pic540.jpg) no-repeat center/cover;
+            // margin-right: 300px;
             // width: 90%; height: 700px; background;
             // border-radius: 20px;
-            article {
-                display: none;
-            } 
+            // article {
+            //     display: none;
+            // } 
 			.inner {
 				.btnOpen {
 					margin-left: -18vw;
@@ -1266,11 +1281,11 @@ $mobile:539px;
 					h1 {
 						// font-size: 80px;
 						// margin-top: -2vw;
-						margin-left: -18vw;
+						// margin-left: -18vw;
 					}
 					p {
 						margin-top: -200px;
-						margin-left: -18vw;
+						// margin-left: -18vw;
 					}
 				}
 				.pic {
@@ -1281,7 +1296,11 @@ $mobile:539px;
 				}
 			}
 			.wrap {
-				display: none;
+				background: url(../img/slider/pic540.jpg) no-repeat center/cover;
+                margin: 0 auto;
+                // article {
+                //     display: none;
+                // }
 			}
 		}
 
@@ -1340,29 +1359,29 @@ $mobile:539px;
 		// footer 영역
 
 		// aside 영역
-		#aside {
-			.inner {
-				// flex-direction: column;
-				justify-content: space-around;
-				align-content: center;
-				.pic {
-					width: 65%;
-				}
-				.content {
-					width: 80%;
-					h2 {
-						font-size: 4vw;
-					}
-					p {
-						font-size: 14px;
-						line-height: 1.2;
-					}
-					.btnClose {
-						margin-top: -10px;
-					}
-				}
-			}
-		}
+		// #aside {
+		// 	.inner {
+		// 		// flex-direction: column;
+		// 		justify-content: space-around;
+		// 		align-content: center;
+		// 		.pic {
+		// 			width: 65%;
+		// 		}
+		// 		.content {
+		// 			width: 80%;
+		// 			h2 {
+		// 				font-size: 4vw;
+		// 			}
+		// 			p {
+		// 				font-size: 14px;
+		// 				line-height: 1.2;
+		// 			}
+		// 			.btnClose {
+		// 				margin-top: -10px;
+		// 			}
+		// 		}
+		// 	}
+		// }
 	}
 }
 
@@ -1407,11 +1426,15 @@ $mobile:539px;
 				}
 			}
 			.wrap {
-				display: none;
+				background: url(../img/slider/pic500.jpg) no-repeat center/cover;
+                margin: 0 auto;
+                // article {
+                //     display: none;
+                // }
 			}
 		}
 
-		about 영역
+		// about 영역
 
 		// portfolio 영역 (수정해야함)
 		#portfolio {
@@ -1444,44 +1467,6 @@ $mobile:539px;
 			}
 		}
 
-		// awards 영역
-		#awards {
-			.inner {
-				// height: 650px;
-				.container {
-					width: 90%;
-					.tab {
-						padding: 10px 0px 10px;
-						input[type="radio"] {
-							&:checked ~ label h2 {
-								display: none;
-							}
-						}
-						label {
-							h2 {
-								font-size: 16px;
-							}
-							h3 {
-								font-size: 14px;
-							}
-						}
-						.content {
-							flex-direction: column;
-							img {
-								width: 150px;
-								height: 100px;
-							}
-							p {
-								width: 100%;
-								height: 100%;
-								padding: 2px 0;
-							}
-						}
-					}
-				}
-			}
-		}
-
 		// contact 영역
 		#contact {
 			.inner {
@@ -1495,32 +1480,32 @@ $mobile:539px;
 		// footer 영역
 
 		// aside 영역
-		#aside {
-			top: 12%;
-			.inner {
-				padding: 2vw;
-				align-content: center;
-				.pic {
-					width: 70%;
-					margin-top: 2vh;
-				}
-				.content {
-					h2 {
-						font-size: 20px;
-						color: #0b0909;
-						margin-bottom: 20px;
-					}
-					p {
-						font-size: 12px;
-						line-height: 1.2;
-						color: #0b0909;
-					}
-					.btnClose {
-						margin-top: -22px;
-						margin-right: -20px;
-					}
-				}
-			}
-		}
+		// #aside {
+		// 	top: 12%;
+		// 	.inner {
+		// 		padding: 2vw;
+		// 		align-content: center;
+		// 		.pic {
+		// 			width: 70%;
+		// 			margin-top: 2vh;
+		// 		}
+		// 		.content {
+		// 			h2 {
+		// 				font-size: 20px;
+		// 				color: #0b0909;
+		// 				margin-bottom: 20px;
+		// 			}
+		// 			p {
+		// 				font-size: 12px;
+		// 				line-height: 1.2;
+		// 				color: #0b0909;
+		// 			}
+		// 			.btnClose {
+		// 				margin-top: -22px;
+		// 				margin-right: -20px;
+		// 			}
+		// 		}
+		// 	}
+		// }
 	}
 }
