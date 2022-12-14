@@ -42,52 +42,50 @@ table {
     #header {
         // border: solid 1px blue;
         width: 100%;
-        height: 100%;
         position: absolute;
         top: 0;
         left: 0;
         z-index: 10;
         .inner {
-            // border: solid 1px rgb(56, 40, 40);
             width: 1180px;
-            height: 100px;
+            height: 75px;
             margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            position: relative;
+
             h1 {
-                a {
-                    // border: solid 1px rgb(232, 11, 11);
+                position: absolute;
+                margin-top: 14px;
+                >a {
                     font-weight: 900;
+                    font-size: 50px;
                     letter-spacing: 10px;
                     color: rgba(255, 255, 255, 0.9);
                     margin-left:50px ;
-                    z-index: 10;
+                    // z-index: 10;
                 }
             }
-        .menuWeb #gnb {
-                display: flex;
-                margin-right: 50px;
+        .menuWeb {
+            #gnb {
+                position: absolute;
+                right: 50px ;
+                bottom: 0;
                 li {
+                    float: left;
                     a {
+                        // border: solid 1px blue;
                         display: block;
-                        // border: 1px solid red;
-                        padding: 10px 10px;
-                        font : 15px ;
+                        padding-left: 14px;
+                        font-size: 15px;
                         font-weight: 900px;
-                        // color: #fff;
                         color: rgba(255, 255, 255, 0.7); 
-                        margin-left: 15px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        transition: 0.4s;
+                        margin: 10px;
+                        // transition: 0.4s;
                     }
                     &:hover {
                         a {
                             // background: #fff;
                             color: #333;
-                            transition: 0.5s;
+                            // transition: 0.5s;
                             
                         }
                     }
@@ -97,14 +95,11 @@ table {
                                 color:#333;
                             }
                         }
-                        // a {
-                        //     color: rgba(255, 255, 255, 0.7); 
-                        // }
-                        
                     }
                 }
             }
         }
+    }
         .btnCall {
             // border: solid 1px red;
 			position: absolute;
@@ -167,53 +162,59 @@ table {
 		}
 		.menuMo {
             // border: solid 1px blue;
-			width: 270px; // 확인후 width 180px 수정할것!
+			width: 180px; //  버튼 콜시 menuMo 와 gnbMo 나열이 문제;;; 
 			height: 100vh;
 			background: rgb(132, 191, 225);
 			position: fixed;
 			top: 0;
-			// left: -150px;
+			left: -180px;
 			padding: 35px 30px;
 			z-index: 10;
 			transition: 0.5s;
+            display: none;   // 웹화면 전환시 사라짐!
 			&.on {
 				left: 0;
 			}
 			h1 {
-                width: 100%;
-                height: 100px;
-                display: block;
-                // padding: 0;
-                // border: solid 1px blue;
-				// padding-bottom: 5px;
-				border-bottom: 1px solid  rgba(255, 255, 255, 0.8);
+                position: absolute;
+                // width: 100%;       
+                // height: 100px;
+                // right: 10px;
+                border: solid 1px rgb(0, 38, 255) ;
+                margin: 0 auto;
+                // padding: 0px 0px;
+				border-bottom: 1px solidrgba(255, 255, 255, 0.8);
+                
+                // display: flex;
+                // justify-content: center;
+                // align-items: center;
+                
 				a {
-                    width: 100px;
-                    // padding:0px 0px ;
-                    // border: solid 1px blue;
 					display: block;
-                    margin:0  auto;
-                    padding-left: 10px;
-					// font-size: 50px;
-					// color: #fff;
+                    // margin:0  auto;
+                    // font-weight: 900;
+                    // font-size: 50px;
+                    font: bold 50px/1 ;
+                    // letter-spacing: 10px;
+					color: #fff;
 					text-align: center;
 				}
 				span {
                     // border: solid 1px blue;
-                    width: 100%;
-					font-size: 12px;
+                    // width: 100%;
                     display: block;
-                    // margin-top: 0px;
-					color: rgba(255, 255, 255, 0.6);
-                    text-align: center;
+                    font-size: 12px;
+					color: rgba(255, 255, 255, 0.7);
+                    // text-align: center;
 				}
 			}
 			#gnbMo {
 				li {
 					a {
+                        border: solid 1px red ;
 						display: block;
 						width: 100%;
-						padding: 14px 0;
+						padding: 15px 0;
 						border-bottom: 1px dotted  rgba(255, 255, 255, 0.4);
 						font: bold 14px/1 ;
 						color: rgba(255, 255, 255, 0.7);
@@ -234,7 +235,7 @@ table {
 			width: 100%;
 			margin: 0 auto;
 			.txt {  // 슬로건
-                // border : solid 1px red;            
+                border : solid 1px red;            
 				width: 100%;
                 height: 300px;
                 margin-top: 150px;
@@ -260,17 +261,17 @@ table {
                     font-size: 28px;
                     font-weight: 500;
                     color: rgba(255, 255, 255, 0.7);
-                    margin-top:150px ;                    // display: flex;
+                    margin-top:150px ;                    
+                    // display: flex;
                     // justify-content: center;
                     // align-items: center;
                 }
 			}
 			.pic {
-				width: 470px;
+                border: solid 1px red;
+				width: 100%;
 				height: 600px;
 				position: absolute;
-				bottom: 100px;
-				right: 0;
 				overflow: hidden;
 				> img {
 					width: 100%;
@@ -361,14 +362,14 @@ table {
                     }
                     
 				}
-				.pagination {
-					position: absolute;
-					top: 400px;
-					margin-left: 25%;
-					font-size: 18px;
-					font-weight: 400;
-                    color: #fff;
-				}
+				// .pagination {
+				// 	position: absolute;
+				// 	top: 400px;
+				// 	margin-left: 25%;
+				// 	font-size: 18px;
+				// 	font-weight: 400;
+                //     color: #fff;
+				// }
 			}
 		}
 	}
@@ -1082,23 +1083,19 @@ table {
 
 // tablet - 1179px--------------------
 @media screen and (max-width: $tablet) {
-	body {
+	body { // 웹에서의 네스팅에 따라서 순서대로 그대로!!!
+        // 웹의 네스팅과 미디어 쿼리 네스팅은 동일하게 !!!!
 		// header 영역
 		#header {
 			.inner {
-				width: 100%;
-				height: 100px;
-				padding: 0vh 0vw;
-                position: absolute;
-                position: relative;
-				// > h1 {
-                //     // display: none;
-                //     // position: absolute;
-                //     // position: relative;
-                //     // margin-left: 50px;
-				// }
+				width: 100%;    // 미디어쿼리에서는 고정 픽셀은 %로 변경 해야함! 
+				// height: 10vh; // (width, margin(left.rlight) 모두 합쳐서 100%가 되어야 함!!
+				  // 기존 웹의 코드를 덮어 쓸때만 미디어쿼리 추가하여 작성함 !
+				> h1 {
+                    left: 20px;  // 웹버전에 left:0; 인 이유는 1180px 가운데 배치했기때문에 좌측 여백 불필요! 1179px미디어 쿼리 구간에는 주지 않으면 딱 붙어 버림;;
+				}
 				.menuWeb {
-                    display: none;
+                    display: none; // 모든 코드는 모두 웹에서 작성하고, 필요한 미디어쿼리 구간에서 해당 코드를 보이거나 안보이거나 하도록 진행 
                 }
                 .btnCall {
                     display: block;
@@ -1109,20 +1106,12 @@ table {
 			}
 		}
 
-        		// visual 영역
+// visual 영역
 		#visual {
-			height: 600px;
-            // margin-right: 300px;
-            // width: 90%; height: 700px; background;
-            // border-radius: 20px;
-            // article {
-            //     display: none;
-            // }
-            
-		}
-			.inner {
+            .inner {
                 
 				.btnOpen {
+                    // border: 1px solid red;
 					margin-left: -12vw;
 					margin-top: 50px;
 				}
@@ -1130,7 +1119,7 @@ table {
 					width: 25%;
 					position: absolute;
 					h1 {
-						// margin-left: 50px;
+						margin-left: 50px;
                         position: absolute;
                         position: relative;
                         
@@ -1143,17 +1132,7 @@ table {
                     //    margin-top: -1000px; 
                     // }
 				}
-				.pic {
-					// width: 45vw;
-					height: 650px;
-					margin-right: 5vw;
-					bottom: 12vh;
-					z-index: -1;
-					img {
-						width: 100%;
-						height: 100%;
-					}
-				}
+				
 			}
 			.wrap {
 				background: url(../img/slider/pic900.jpg) no-repeat center/cover;
@@ -1191,6 +1170,10 @@ table {
 				}
 			}
 		}
+			// height: 600px;    // 다른구간에서 변경되어 영향을 주는 코드가 있다면 수정하기!
+            // 높이값 유지 하므로 표기 하지 않기!            
+		}
+			
         		// about 영역
 		#about {
             // border: 1px solid rgb(255, 0, 149);
@@ -1501,7 +1484,7 @@ table {
 			.inner {
 				.btnOpen {
 					margin-left: -18vw;
-					margin-top: -500px;
+					margin-top: -300px;
 				}
 
 				.txt {

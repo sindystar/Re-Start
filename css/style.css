@@ -49,7 +49,6 @@ table {
 
 #header {
   width: 100%;
-  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -57,38 +56,39 @@ table {
 }
 #header .inner {
   width: 1180px;
-  height: 100px;
+  height: 75px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative;
 }
-#header .inner h1 a {
+#header .inner h1 {
+  position: absolute;
+  margin-top: 14px;
+}
+#header .inner h1 > a {
   font-weight: 900;
+  font-size: 50px;
   letter-spacing: 10px;
   color: rgba(255, 255, 255, 0.9);
   margin-left: 50px;
-  z-index: 10;
 }
 #header .inner .menuWeb #gnb {
-  display: flex;
-  margin-right: 50px;
+  position: absolute;
+  right: 50px;
+  bottom: 0;
+}
+#header .inner .menuWeb #gnb li {
+  float: left;
 }
 #header .inner .menuWeb #gnb li a {
   display: block;
-  padding: 10px 10px;
-  font: 15px;
+  padding-left: 14px;
+  font-size: 15px;
   font-weight: 900px;
   color: rgba(255, 255, 255, 0.7);
-  margin-left: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.4s;
+  margin: 10px;
 }
 #header .inner .menuWeb #gnb li:hover a {
   color: #333;
-  transition: 0.5s;
 }
 #header .inner .menuWeb #gnb li.on:hover a {
   color: #333;
@@ -151,42 +151,42 @@ table {
   opacity: 0;
 }
 #header .menuMo {
-  width: 270px;
+  width: 180px;
   height: 100vh;
   background: rgb(132, 191, 225);
   position: fixed;
   top: 0;
+  left: -180px;
   padding: 35px 30px;
   z-index: 10;
   transition: 0.5s;
+  display: none;
 }
 #header .menuMo.on {
   left: 0;
 }
 #header .menuMo h1 {
-  width: 100%;
-  height: 100px;
-  display: block;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  position: absolute;
+  border: solid 1px rgb(0, 38, 255);
+  margin: 0 auto;
+  border-bottom: 1px solidrgba(255, 255, 255, 0.8);
 }
 #header .menuMo h1 a {
-  width: 100px;
   display: block;
-  margin: 0 auto;
-  padding-left: 10px;
+  font: bold 50px/1;
+  color: #fff;
   text-align: center;
 }
 #header .menuMo h1 span {
-  width: 100%;
-  font-size: 12px;
   display: block;
-  color: rgba(255, 255, 255, 0.6);
-  text-align: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
 }
 #header .menuMo #gnbMo li a {
+  border: solid 1px red;
   display: block;
   width: 100%;
-  padding: 14px 0;
+  padding: 15px 0;
   border-bottom: 1px dotted rgba(255, 255, 255, 0.4);
   font: bold 14px/1;
   color: rgba(255, 255, 255, 0.7);
@@ -205,6 +205,7 @@ table {
   margin: 0 auto;
 }
 #visual .inner .txt {
+  border: solid 1px red;
   width: 100%;
   height: 300px;
   margin-top: 150px;
@@ -230,11 +231,10 @@ table {
   margin-top: 150px;
 }
 #visual .inner .pic {
-  width: 470px;
+  border: solid 1px red;
+  width: 100%;
   height: 600px;
   position: absolute;
-  bottom: 100px;
-  right: 0;
   overflow: hidden;
 }
 #visual .inner .pic > img {
@@ -311,14 +311,6 @@ table {
   cursor: pointer;
   transition: 0.5s;
   transform: scale(1.2);
-}
-#visual .inner .wrap .pagination {
-  position: absolute;
-  top: 400px;
-  margin-left: 25%;
-  font-size: 18px;
-  font-weight: 400;
-  color: #fff;
 }
 
 #about {
@@ -931,10 +923,9 @@ table {
 @media screen and (max-width: 1179px) {
   body #header .inner {
     width: 100%;
-    height: 100px;
-    padding: 0vh 0vw;
-    position: absolute;
-    position: relative;
+  }
+  body #header .inner > h1 {
+    left: 20px;
   }
   body #header .inner .menuWeb {
     display: none;
@@ -945,55 +936,43 @@ table {
   body #header .inner .menuMo {
     display: block;
   }
-  body #visual {
-    height: 600px;
-  }
-  body .inner .btnOpen {
+  body #visual .inner .btnOpen {
     margin-left: -12vw;
     margin-top: 50px;
   }
-  body .inner .txt {
+  body #visual .inner .txt {
     width: 25%;
     position: absolute;
   }
-  body .inner .txt h1 {
+  body #visual .inner .txt h1 {
+    margin-left: 50px;
     position: absolute;
     position: relative;
   }
-  body .inner .txt p {
+  body #visual .inner .txt p {
     justify-content: center;
     align-items: center;
   }
-  body .inner .pic {
-    height: 650px;
-    margin-right: 5vw;
-    bottom: 12vh;
-    z-index: -1;
-  }
-  body .inner .pic img {
-    width: 100%;
-    height: 100%;
-  }
-  body .wrap {
+  body #visual .wrap {
     background: url(../img/slider/pic900.jpg) no-repeat center/cover;
     margin: 0 auto;
   }
-  body .wrap #slider ul li img {
+  body #visual .wrap #slider ul li img {
     display: none;
   }
-  body .wrap .prev img {
+  body #visual .wrap .prev img {
     left: 0;
     bottom: 0;
     margin-bottom: 10vh;
     margin-left: 30vw;
     display: none;
   }
-  body .wrap .next img {
+  body #visual .wrap .next img {
     margin-bottom: 7vh;
     margin-left: 18vw;
     display: none;
   }
-  body .wrap .pagination {
+  body #visual .wrap .pagination {
     display: none;
   }
   #about {
@@ -1229,7 +1208,7 @@ table {
   }
   body #visual .inner .btnOpen {
     margin-left: -18vw;
-    margin-top: -500px;
+    margin-top: -300px;
   }
   body #visual .inner .txt h1 {
     font-size: 80px;
