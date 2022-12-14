@@ -75,7 +75,8 @@ table {
                         padding: 10px 10px;
                         font : 15px ;
                         font-weight: 900px;
-                        color: #fff;
+                        // color: #fff;
+                        color: rgba(255, 255, 255, 0.7); 
                         margin-left: 15px;
                         display: flex;
                         justify-content: center;
@@ -96,9 +97,9 @@ table {
                                 color:#333;
                             }
                         }
-                        a {
-                            color: rgba(255, 255, 255, 0.7); 
-                        }
+                        // a {
+                        //     color: rgba(255, 255, 255, 0.7); 
+                        // }
                         
                     }
                 }
@@ -108,7 +109,7 @@ table {
             // border: solid 1px red;
 			position: absolute;
 			right: 30px;
-			top: 50%;
+			top: 50px;
 			transform: translateY(-50%);
 			display: none;
 			width: 20px;
@@ -166,12 +167,12 @@ table {
 		}
 		.menuMo {
             // border: solid 1px blue;
-			width: 270px;
+			width: 270px; // 확인후 width 180px 수정할것!
 			height: 100vh;
-			background: rgb(122, 177, 250);
+			background: rgb(132, 191, 225);
 			position: fixed;
 			top: 0;
-			left: -270px;
+			// left: -150px;
 			padding: 35px 30px;
 			z-index: 10;
 			transition: 0.5s;
@@ -179,17 +180,32 @@ table {
 				left: 0;
 			}
 			h1 {
-				padding-bottom: 30px;
-				border-bottom: 1px solid #eee;
+                width: 100%;
+                height: 100px;
+                display: block;
+                // padding: 0;
+                // border: solid 1px blue;
+				// padding-bottom: 5px;
+				border-bottom: 1px solid  rgba(255, 255, 255, 0.8);
 				a {
+                    width: 100px;
+                    // padding:0px 0px ;
+                    // border: solid 1px blue;
 					display: block;
-					font: bold 24px/1 ;
-					color: #fff;
+                    margin:0  auto;
+                    padding-left: 10px;
+					// font-size: 50px;
+					// color: #fff;
 					text-align: center;
 				}
 				span {
+                    // border: solid 1px blue;
+                    width: 100%;
 					font-size: 12px;
-					color: rgba(255, 255, 255, 0.8);
+                    display: block;
+                    // margin-top: 0px;
+					color: rgba(255, 255, 255, 0.6);
+                    text-align: center;
 				}
 			}
 			#gnbMo {
@@ -197,10 +213,10 @@ table {
 					a {
 						display: block;
 						width: 100%;
-						padding: 20px 0;
-						border-bottom: 1px solid #444;
-						font: bold 14px/1 'arial';
-						color: #888;
+						padding: 14px 0;
+						border-bottom: 1px dotted  rgba(255, 255, 255, 0.4);
+						font: bold 14px/1 ;
+						color: rgba(255, 255, 255, 0.7);
 						text-align: center;
 					}
 				}
@@ -449,7 +465,7 @@ table {
                     clear: both;
                 }
 
-                &.title_box {
+                &.title_box {  // ?
                     // border: solid 1px;
                     width: 100%;
                     height: 100px;
@@ -1060,142 +1076,6 @@ table {
     }
 }
 
-// tablet 커스텀
-// @media screen and (max-width: 1179px) {
-// 	body {
-
-// 		// padding: 0vh 0vw;
-// 		// header 영역
-// 		#header {
-// 			// width: 100%;
-// 			// height: 15vh;
-// 			.inner {
-// 				width: 100%;
-// 				height: 15vh;
-// 				padding: 0vh 5vw;
-// 				align-items: center;
-// 				border: 1px solid red;
-// 				h1 {
-// 					// display: none;
-// 				}
-// 				.nav_web {
-// 					display: none;
-// 				}
-// 			}
-// 		}
-
-// 		// visual 영역
-// 		#visual {
-// 			width: 100%;
-// 			height: calc(100vh - 19vh);
-// 			overflow: visible;
-// 			.inner {
-// 				.txt {
-// 					width: 25%;
-// 					position: absolute;
-// 					h1 {
-// 						// font-size: 12vh;
-// 						width: 30%;
-// 						margin-top: -110px;
-// 						margin-left: -12vw;
-// 					}
-// 					p {
-// 						margin-top: -200px;
-// 						margin-left: -12vw;
-// 					}
-// 				}
-// 				.pic {
-// 					// width: 45vw;
-// 					height: 650px;
-// 					margin-right: 5vw;
-// 					z-index: -1;
-// 				}
-// 			}
-// 			.wrap {
-// 				// position: relative;
-// 				#slider {
-// 					margin: 5vh 5vw;
-// 				}
-// 				.prev {
-// 					img {
-// 						margin-bottom: 20vh;
-// 						margin-left: 16vw;
-// 					}
-// 				}
-// 				.next {
-// 					img {
-// 						margin-bottom: 13vh;
-// 						margin-left: 5vw;
-// 					}
-// 				}
-// 				.pagination {
-// 					display: none;
-// 				}
-// 			}
-// 		}
-
-// 		// about 영역
-// 		#about {
-// 			.inner {
-// 				width: 100%;
-// 				padding: 3vw 5vw 5vw;
-// 				.txt {
-// 					display: flex;
-// 					flex-direction: column;
-// 					h2 {
-// 						width: 100%;
-// 						margin-bottom: 15px;
-// 					}
-// 					p {
-// 						width: 100%;
-// 					}
-// 				}
-// 			}
-// 		}
-// 		#portfolio {
-// 			.inner {
-// 				width: 100%;
-// 				padding: 3vw 5vw 5vw;
-// 			}
-// 		}
-// 		#news {
-// 			.inner {
-// 				width: 100%;
-// 				height: 670px;
-// 				padding: 3vw 5vw 5vw;
-// 				.container {
-// 					margin-top: 6vh;
-// 				}
-// 			}
-// 		}
-// 		#banner {
-// 			.inner {
-// 				width: 100%;
-// 				padding: 3vw 5vw 5vw;
-// 				h1 {
-// 					width: 100%;
-// 				}
-// 				p {
-// 					display: none;
-// 				}
-// 				.wrap {
-// 					margin: 5vh 4vw 6vh 0vw;
-// 					div {
-// 						input[type="submit"] {
-// 							margin: -1vh 5vw;
-// 						}
-// 					}
-// 				}
-// 			}
-// 		}
-// 		#footer {
-// 			.inner {
-// 				width: 100%;
-// 				padding: 3vw 5vw 5vw;
-// 			}
-// 		}
-// 	}
-// }
 
 
 // 반응형 사이즈 확인후 작업 할것 
@@ -1422,28 +1302,8 @@ table {
                                     width: 100%;
                                     height: 100%;
                                     
-                                    cursor: pointer;
-                                    &:hover
-                                    .txt_box{
-                                        opacity: 1;
-                                        transition: 0.5s;
-                                        background:#fff;
-                                        border: solid 1px #333;
-                                        border-radius: 10px;
-                                    }
-                                    &.bg_box1 {
-                                        background:#fff
-                                    }
-                                    &.bg_box2 {
-                                        background: url(./img/news/pic2.jpg) no-repeat center/cover;
-                                    }
-    
-                                    &.bg_box3 {
-                                        background: url(./img/news/pic3.jpg) no-repeat center/cover;
-                                    }
-                                    &.bg_box4 {
-                                        background: url(./img/news/pic4.jpg) no-repeat center/cover;
-                                    }
+                                    
+                                   
                                 }
                                 .txt_box{
                                     opacity: 0;
@@ -1498,14 +1358,7 @@ table {
                                             margin-right: 5px;
                                             }
                                         }
-                                        a{
-                                            display: block;
-                                            font: bold 12px/1 ;
-                                            color: #444;
-                                            i{
-                                            margin-right: 5px;
-                                            }
-                                        }
+                                        
                                     }
                                     
                                 }
@@ -1768,7 +1621,7 @@ table {
 }
 
 // mobile - 539px -------------------
-@media screen and (max-width: 539px) {
+@media screen and (max-width: $mobile) {
 	body {
 		// header 영역
 		#header {
