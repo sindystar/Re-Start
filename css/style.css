@@ -63,8 +63,6 @@ table {
 }
 #header .inner > h1 > a {
   font-size: 50px;
-  margin-left: 50px;
-  margin-top: 100px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.8);
 }
@@ -194,7 +192,7 @@ table {
 
 #visual {
   width: 100%;
-  height: 100%;
+  height: 600px;
   margin-top: -75px;
   overflow: hidden;
   position: relative;
@@ -292,33 +290,126 @@ table {
 
 #about {
   width: 100%;
-  height: 100%;
+  padding: 5vw 5vw 5vw;
+  position: relative;
+  margin: 0 auto;
 }
 #about .iner {
   width: 1180px;
-  height: 400px;
   margin: 0 auto;
-  padding-top: 50px;
-  position: relative;
 }
-#about .iner h1 {
-  margin-bottom: 20px;
-}
-#about .iner .txt {
+#about .iner .text_box {
   width: 100%;
-  height: 200px;
 }
-#about .iner .txt > h2 {
+#about .iner .text_box h1 {
+  width: 100%;
+}
+#about .iner .text_box .txt {
+  border: 1px solid red;
+  width: 500px;
+  height: 200px;
+  font-size: 0;
+}
+#about .iner .text_box .txt > h2 {
   font: bold 36px/1.4;
   color: #333;
   margin-bottom: 5px;
   padding-left: 10px;
 }
-#about .iner .txt > h3 {
+#about .iner .text_box .txt > h3 {
   font: 24px/1.4;
   columns: #555;
   margin-bottom: 5px;
   padding-left: 10px;
+}
+#about .iner .text_box .txt p {
+  font: 14px/1.2;
+  color: #777;
+  margin-bottom: 50px;
+  padding-left: 10px;
+}
+#about .iner .text_box .txt a {
+  margin-top: 50px;
+  display: block;
+  position: relative;
+  margin-left: 10px;
+  width: 100px;
+  height: 24px;
+  font-weight: 600;
+  font: 14px/50px;
+  color: rgb(27, 113, 234);
+  text-align: center;
+}
+#about .iner .text_box .txt a:hover {
+  border-radius: 3px;
+  border: 1px solid rgb(27, 113, 234);
+  color: rgb(27, 113, 234);
+}
+
+#portfolio {
+  width: 100%;
+}
+#portfolio .inner {
+  width: 1180px;
+  margin: 0 auto;
+  padding: 100px 0px 5px;
+  overflow: hidden;
+  position: relative;
+}
+#portfolio .inner::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#portfolio .inner h1 {
+  float: left;
+}
+#portfolio .inner .container {
+  width: 1180px;
+  float: left;
+  overflow: hidden;
+}
+#portfolio .inner .container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#portfolio .inner .container .tap {
+  width: 500px;
+  float: left;
+  margin-top: 15px;
+  padding-bottom: 5px;
+}
+#portfolio .inner .container .tap ul {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#portfolio .inner .container .tap ul li {
+  width: 100%;
+  height: 30px;
+  position: relative;
+  float: left;
+  font-size: 18px;
+  font-weight: 500;
+}
+#portfolio .inner .container .tap ul li a {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 40PX;
+  display: flex;
+}
+#portfolio .inner .container .tap ul li.on {
+  color: rgb(27, 113, 234);
+  font-weight: 700;
+  transition: 0.14s;
+}
+#portfolio .inner .container .tap ul li.on a {
+  position: absolute;
+  color: rgb(27, 113, 234);
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=style.css.map */
