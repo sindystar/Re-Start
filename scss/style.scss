@@ -43,6 +43,7 @@ table {
 #header {
     // border: 1px solid blue;
     width: 100%;
+	// padding: 50px 0vw 0vh;
     // height: 100vh;
     // border-bottom: 1px solid #ddd;
     // z-index: 10;
@@ -56,13 +57,13 @@ table {
         position: relative;;
         z-index: 20;
         >h1 {
-            left: 0x ;
-            top :50px ;
+			position: absolute;
+            // left: 20x ;
+            top :16px ;
+			left: 30px;
             // letter-spacing: 10px;
             >a {
                 font-size: 50px;
-                // margin-left:  50px;
-                // margin-top: 100px;
                 font-weight: 600;
                 color :rgba(255,255,255,0.8)
             }
@@ -70,13 +71,13 @@ table {
         .menuWeb {
             #gnb {
                 position: absolute;
-                right: 50px;
+                right: 30px;
                 bottom: 0;
                 li {
                     float: left;
                     a {
                         display: block;
-                        padding-left: 14px;
+                        padding-left: 14px; //40px;
                         font-size: 14px ;
                         font-weight: 550;
                         color: #fff;
@@ -137,7 +138,7 @@ table {
             &.on {
                 &::before {
                     top: 50%;
-                    margin-top: 1px;
+                    margin-top: -1px;
                     transform: rotate(45deg);
                 }
                 &::after {
@@ -153,7 +154,7 @@ table {
         }
         .menuMo {
             width: 200px;
-            // height: 100vh;
+            height: 100vh;
             background: rgb(155, 208, 238);
             position: fixed;
             top: 0;
@@ -172,7 +173,7 @@ table {
                 a {
                     display: block;
                     font-weight: 600;
-                    letter-spacing: 1;
+                    letter-spacing: 10;
                     // font-size: 0px;
                     color: #fff;
                     text-align: center;
@@ -183,7 +184,7 @@ table {
                     display: block;
                     color: rgba(255,255,255,0.8);
                     font-weight: 500;
-                    letter-spacing: 1;
+                    letter-spacing: 10;
                     text-align: center;
                     
                 }
@@ -197,8 +198,8 @@ table {
                         border-bottom: 1px dotted #fff;
                         font: bold 14px/1 ;
                         color: #fff;
+						text-align: center;
                     }
-                    text-align: center;
                 }
             }
         }
@@ -259,20 +260,20 @@ table {
         }
         .wrap {
             width: 100%;
-            height: 600px;
-            object-fit: cover;
+            // height: 600px;
             margin: 0 auto;
-            z-index: 9;
+            // z-index: 9;
             #slider {
-                width: 1180px;
-                height: 600px;
-                left: 0;
+                width: 100%;
+                height:100vh;
+                // left: 0;
+				position: relative;
                 overflow: hidden;
 
-                ul {
+                ul {  //panel
                     width: calc(100% * 5);
                     height: 100%;
-                    position: absolute;
+                    // position: absolute;
                     display: flex;
                     top: 0;
                     left: 0;
@@ -282,8 +283,11 @@ table {
                         float: left;
                         img {
                             width: 100%;
-                            height: 100%;
+                            height: 600px;
                             object-fit: cover;
+							background-repeat: no-repeat;
+							background-size: cover ;
+							// background-attachment: fixed;
                         }
                     }
                 }
@@ -292,9 +296,10 @@ table {
                 width: 100%;
                 // height : 15px
                 img {
+					cursor: pointer;
                     width: 100px;
                     position: absolute;
-                    left: 15%;
+                    left: 25%;
 					bottom: 250px;
                     transition: 0.5s;
                     z-index: 5;
@@ -304,13 +309,15 @@ table {
                 width: 100%;
                 // height: 15px;
                 position: absolute;
-                left: 75%;
+                left: 70%;
                 bottom: 250px;
                 img {
+					cursor: pointer;
                     width: 100px;
                     // right: 200px;
                     // bottom: 250px;
-                    transition: 0.5s;                    
+                    transition: 0.5s; 
+					z-index: 5;                   
                 }
                 // ::after {
                 //     content: "";
@@ -333,7 +340,9 @@ table {
 //about 
 #about {
     width: 100%;
-    padding: 5vw 5vw 5vw;
+	// height: 100vh;
+    padding: 5vw 20vw 5vw;
+	display: block;
 	position: relative;
 	margin: 0 auto;
     .iner {
@@ -342,18 +351,18 @@ table {
         margin: 0 auto;
         // position: relative;
 
-        // &::after {
-        //     content: "";
-        //     display: block;
-        //     clear: both;
-        // }
+        &::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
 		.text_box {
 			width: 100%;
 			h1 {
-				width: 100%;
+				width: 1180px;
 			}
 			.txt {
-				border: 1px solid red;
+				// border: 1px solid red;
 				width: 500px;
 				height: 200px;
 				font-size: 0;
@@ -457,8 +466,7 @@ table {
 							font-weight: 700;
 						}
 					}
-	}
-		
+				}		
 			}
 		}
 	}

@@ -19,7 +19,7 @@ a {
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 50px;
   font-weight: 500;
 }
 
@@ -58,8 +58,9 @@ table {
   z-index: 20;
 }
 #header .inner > h1 {
-  left: 0x;
-  top: 50px;
+  position: absolute;
+  top: 16px;
+  left: 30px;
 }
 #header .inner > h1 > a {
   font-size: 50px;
@@ -68,7 +69,7 @@ table {
 }
 #header .inner .menuWeb #gnb {
   position: absolute;
-  right: 50px;
+  right: 30px;
   bottom: 0;
 }
 #header .inner .menuWeb #gnb li {
@@ -133,7 +134,7 @@ table {
 }
 #header .inner .btnCall.on::before {
   top: 50%;
-  margin-top: 1px;
+  margin-top: -1px;
   transform: rotate(45deg);
 }
 #header .inner .btnCall.on::after {
@@ -147,6 +148,7 @@ table {
 }
 #header .inner .menuMo {
   width: 200px;
+  height: 100vh;
   background: rgb(155, 208, 238);
   position: fixed;
   top: 0;
@@ -166,7 +168,7 @@ table {
 #header .inner .menuMo h1 a {
   display: block;
   font-weight: 600;
-  letter-spacing: 1;
+  letter-spacing: 10;
   color: #fff;
   text-align: center;
 }
@@ -175,10 +177,7 @@ table {
   display: block;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
-  letter-spacing: 1;
-  text-align: center;
-}
-#header .inner .menuMo #gnbMo li {
+  letter-spacing: 10;
   text-align: center;
 }
 #header .inner .menuMo #gnbMo li a {
@@ -188,6 +187,7 @@ table {
   border-bottom: 1px dotted #fff;
   font: bold 14px/1;
   color: #fff;
+  text-align: center;
 }
 
 #visual {
@@ -237,21 +237,17 @@ table {
 }
 #visual .inner .wrap {
   width: 100%;
-  height: 600px;
-  object-fit: cover;
   margin: 0 auto;
-  z-index: 9;
 }
 #visual .inner .wrap #slider {
-  width: 1180px;
-  height: 600px;
-  left: 0;
+  width: 100%;
+  height: 100vh;
+  position: relative;
   overflow: hidden;
 }
 #visual .inner .wrap #slider ul {
   width: 500%;
   height: 100%;
-  position: absolute;
   display: flex;
   top: 0;
   left: 0;
@@ -263,16 +259,19 @@ table {
 }
 #visual .inner .wrap #slider ul li img {
   width: 100%;
-  height: 100%;
+  height: 600px;
   object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 #visual .inner .wrap .prev {
   width: 100%;
 }
 #visual .inner .wrap .prev img {
+  cursor: pointer;
   width: 100px;
   position: absolute;
-  left: 15%;
+  left: 25%;
   bottom: 250px;
   transition: 0.5s;
   z-index: 5;
@@ -280,17 +279,20 @@ table {
 #visual .inner .wrap .next {
   width: 100%;
   position: absolute;
-  left: 75%;
+  left: 70%;
   bottom: 250px;
 }
 #visual .inner .wrap .next img {
+  cursor: pointer;
   width: 100px;
   transition: 0.5s;
+  z-index: 5;
 }
 
 #about {
   width: 100%;
-  padding: 5vw 5vw 5vw;
+  padding: 5vw 20vw 5vw;
+  display: block;
   position: relative;
   margin: 0 auto;
 }
@@ -298,14 +300,18 @@ table {
   width: 1180px;
   margin: 0 auto;
 }
+#about .iner::after {
+  content: "";
+  display: block;
+  clear: both;
+}
 #about .iner .text_box {
   width: 100%;
 }
 #about .iner .text_box h1 {
-  width: 100%;
+  width: 1180px;
 }
 #about .iner .text_box .txt {
-  border: 1px solid red;
   width: 500px;
   height: 200px;
   font-size: 0;
